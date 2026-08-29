@@ -1,0 +1,4 @@
+interface:
+  display_name: "Model selection"
+  short_description: "Choose a model from measured tradeoffs"
+  default_prompt: "Use $model-selection to choose the model and effort for this task."

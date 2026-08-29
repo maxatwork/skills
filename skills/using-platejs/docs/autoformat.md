@@ -1,0 +1,182 @@
+# Autoformat
+
+Source: https://platejs.org/docs/autoformat
+
+## Registry URLs
+
+- Components index: https://platejs.org/r/registry.json
+- Docs index: https://platejs.org/r/registry-docs.json
+- Component content: https://platejs.org/r/{name}
+
+Any `<ComponentSource name="..." />` or `<ComponentPreview name="..." />` in this page can be resolved at `https://platejs.org/r/{name}`.
+
+---
+
+---
+title: Autoformat
+description: Markdown shortcuts and text substitutions powered by input rules.
+docs:
+  - route: /docs/plugin-input-rules
+    title: Plugin Input Rules
+  - route: /docs/basic-blocks
+    title: Basic Elements
+  - route: /docs/basic-marks
+    title: Basic Marks
+  - route: /docs/code-block
+    title: Code Block
+  - route: /docs/list
+    title: List
+---
+
+For the full runtime — dispatch, ownership, selection context, and custom rule authoring — see the [Plugin Input Rules](/docs/plugin-input-rules) guide. This page is the kit-first entry for markdown shortcuts and text substitutions.
+
+[autoformat-demo registry content](https://platejs.org/r/autoformat-demo)
+
+<PackageInfo>
+
+## Features
+
+- Markdown shortcuts owned by the feature plugins that understand them.
+- Text substitutions powered by local `createTextSubstitutionInputRule(...)` definitions.
+- Explicit activation through `inputRules`.
+- No hidden default shortcut behavior.
+
+</PackageInfo>
+
+## Kit Usage
+
+<Steps>
+
+### Installation
+
+The fastest way to add common text substitutions is with `AutoformatKit`.
+
+[autoformat-kit registry content](https://platejs.org/r/autoformat-kit)
+
+### Add Kit
+
+```tsx
+import { createPlateEditor } from 'platejs/react';
+import { AutoformatKit } from '@/components/editor/plugins/autoformat-kit';
+
+const editor = createPlateEditor({
+  plugins: [
+    // ...otherPlugins,
+    ...AutoformatKit,
+  ],
+});
+```
+
+</Steps>
+
+## Manual Usage
+
+<Steps>
+
+### Feature-Owned Markdown Shortcuts
+
+Markdown shortcuts live on the plugins that own those features:
+
+```tsx
+import {
+  BlockquoteRules,
+  HeadingRules,
+  HorizontalRuleRules,
+} from '@platejs/basic-nodes';
+import {
+  BlockquotePlugin,
+  H1Plugin,
+  HorizontalRulePlugin,
+} from '@platejs/basic-nodes/react';
+import { CodeBlockRules } from '@platejs/code-block';
+import { CodeBlockPlugin } from '@platejs/code-block/react';
+import { LinkRules } from '@platejs/link';
+import { LinkPlugin } from '@platejs/link/react';
+import {
+  BulletedListRules,
+  OrderedListRules,
+  TaskListRules,
+} from '@platejs/list';
+import { ListPlugin } from '@platejs/list/react';
+import { MathRules } from '@platejs/math';
+import { EquationPlugin, InlineEquationPlugin } from '@platejs/math/react';
+
+const editor = createPlateEditor({
+  plugins: [
+    H1Plugin.configure({
+      inputRules: [HeadingRules.markdown()],
+    }),
+    BlockquotePlugin.configure({
+      inputRules: [BlockquoteRules.markdown()],
+    }),
+    HorizontalRulePlugin.configure({
+      inputRules: [HorizontalRuleRules.markdown({ variant: '-' })],
+    }),
+    CodeBlockPlugin.configure({
+      inputRules: [CodeBlockRules.markdown({ on: 'match' })],
+    }),
+    ListPlugin.configure({
+      inputRules: [
+        BulletedListRules.markdown({ variant: '-' }),
+        OrderedListRules.markdown({ variant: '.' }),
+        TaskListRules.markdown({ checked: false }),
+      ],
+    }),
+    InlineEquationPlugin.configure({
+      inputRules: [MathRules.markdown({ variant: '$' })],
+    }),
+    EquationPlugin.configure({
+      inputRules: [MathRules.markdown({ on: 'break', variant: '$$' })],
+    }),
+    LinkPlugin.configure({
+      inputRules: [
+        LinkRules.markdown(),
+        LinkRules.autolink({ variant: 'paste' }),
+        LinkRules.autolink({ variant: 'space' }),
+        LinkRules.autolink({ variant: 'break' }),
+      ],
+    }),
+  ],
+});
+```
+
+- Package rule families own the markdown semantics. Kits register explicit rule instances.
+
+### Local Text Substitutions
+
+Generic substitutions such as smart quotes, arrows, and fractions are best kept
+as local copied plugin code:
+
+```tsx
+import {
+  createSlatePlugin,
+  createTextSubstitutionInputRule,
+} from 'platejs';
+
+const ShortcutsPlugin = createSlatePlugin({
+  key: 'shortcuts',
+  inputRules: [
+    createTextSubstitutionInputRule({
+      patterns: [{ format: '—', match: '--' }],
+    }),
+  ],
+});
+
+const editor = createPlateEditor({
+  plugins: [ShortcutsPlugin],
+});
+```
+
+### Fine-Grained Overrides
+
+Rule names are the override unit:
+
+```tsx
+import { ItalicRules } from '@platejs/basic-nodes';
+
+ItalicPlugin.configure({
+  inputRules: [ItalicRules.markdown({ variant: '_' })],
+});
+```
+
+</Steps>

@@ -1,0 +1,149 @@
+# Blockquote
+
+Source: https://platejs.org/docs/blockquote
+
+## Registry URLs
+
+- Components index: https://platejs.org/r/registry.json
+- Docs index: https://platejs.org/r/registry-docs.json
+- Component content: https://platejs.org/r/{name}
+
+Any `<ComponentSource name="..." />` or `<ComponentPreview name="..." />` in this page can be resolved at `https://platejs.org/r/{name}`.
+
+---
+
+---
+title: Blockquote
+docs:
+  - route: /docs/components/blockquote-node
+    title: Blockquote Element
+---
+
+[basic-blocks-demo registry content](https://platejs.org/r/basic-blocks-demo)
+
+<PackageInfo>
+
+## Features
+
+- Create blockquotes to emphasize important information or highlight quotes from external sources.
+- Renders as `<blockquote>` HTML element by default.
+- Supports nested block content such as paragraphs, lists, and nested blockquotes.
+
+</PackageInfo>
+
+## Kit Usage
+
+<Steps>
+
+### Installation
+
+The fastest way to add the blockquote plugin is with the `BasicBlocksKit`, which includes pre-configured `BlockquotePlugin` along with other basic block elements and their [Plate UI](/docs/installation/plate-ui) components.
+
+[basic-blocks-kit registry content](https://platejs.org/r/basic-blocks-kit)
+
+- [`BlockquoteElement`](/docs/components/blockquote-node): Renders blockquote elements.
+
+### Add Kit
+
+Add the kit to your plugins:
+
+```tsx
+import { createPlateEditor } from 'platejs/react';
+import { BasicBlocksKit } from '@/components/editor/plugins/basic-blocks-kit';
+
+const editor = createPlateEditor({
+  plugins: [
+    // ...otherPlugins,
+    ...BasicBlocksKit,
+  ],
+});
+```
+
+</Steps>
+
+## Manual Usage
+
+<Steps>
+
+### Installation
+
+```bash
+npm install @platejs/basic-nodes
+```
+
+### Add Plugin
+
+Include `BlockquotePlugin` in your Plate plugins array when creating the editor.
+
+```tsx
+import { BlockquotePlugin } from '@platejs/basic-nodes/react';
+import { createPlateEditor } from 'platejs/react';
+
+const editor = createPlateEditor({
+  plugins: [
+    // ...otherPlugins,
+    BlockquotePlugin,
+  ],
+});
+```
+
+### Configure Plugin
+
+You can configure the `BlockquotePlugin` with options such as a specific rendering component or custom keyboard shortcuts.
+
+```tsx
+import { BlockquotePlugin } from '@platejs/basic-nodes/react';
+import { createPlateEditor } from 'platejs/react';
+import { BlockquoteElement } from '@/components/ui/blockquote-node';
+
+const editor = createPlateEditor({
+  plugins: [
+    // ...otherPlugins,
+    BlockquotePlugin.configure({
+      node: { component: BlockquoteElement },
+      shortcuts: { toggle: 'mod+shift+.' },
+    }),
+  ],
+});
+```
+
+- `node.component`: Assigns [`BlockquoteElement`](/docs/components/blockquote-node) to render blockquote elements.
+- `shortcuts.toggle`: Defines a keyboard [shortcut](/docs/plugin-shortcuts) to toggle blockquote formatting.
+
+### Turn Into Toolbar Button
+
+You can add blockquote to the [Turn Into Toolbar Button](/docs/toolbar#turn-into-toolbar-button) to toggle blockquotes:
+
+```tsx
+{
+  icon: <QuoteIcon />,
+  label: 'Quote',
+  value: KEYS.blockquote,
+}
+```
+
+### Insert Toolbar Button
+
+You can add blockquote to the [Insert Toolbar Button](/docs/toolbar#insert-toolbar-button) to insert blockquotes:
+
+```tsx
+{
+  icon: <QuoteIcon />,
+  label: 'Quote',
+  value: KEYS.blockquote,
+}
+```
+
+</Steps>
+
+## Plugins
+
+### `BlockquotePlugin`
+
+Plugin for blockquote container elements. Renders as `<blockquote>` HTML element by default.
+
+## Transforms
+
+### `tf.blockquote.toggle`
+
+Wraps the current block or selection in a blockquote. If the selection is already inside a blockquote, it unwraps the quoted blocks.

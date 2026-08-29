@@ -1,0 +1,71 @@
+# Export
+
+Source: https://platejs.org/docs/examples/export
+
+## Registry URLs
+
+- Components index: https://platejs.org/r/registry.json
+- Docs index: https://platejs.org/r/registry-docs.json
+- Component content: https://platejs.org/r/{name}
+
+Any `<ComponentSource name="..." />` or `<ComponentPreview name="..." />` in this page can be resolved at `https://platejs.org/r/{name}`.
+
+---
+
+---
+title: Export
+description: Export a Plate document to HTML, PDF, image, Markdown, or Word.
+docs:
+  - route: https://pro.platejs.org/docs/examples/export
+    title: Plus
+---
+
+This example exports the current Plate editor value from the browser. The
+registry `export-toolbar-button` owns the client-side download menu for HTML,
+PDF, image, Markdown, and Word output.
+
+## Demo
+
+[playground-demo registry content](https://platejs.org/r/playground-demo)
+
+## Toolbar Source
+
+Install the [Export Toolbar Button](/docs/components/export-toolbar-button)
+component to add the menu to an editor toolbar.
+
+[export-toolbar-button registry content](https://platejs.org/r/export-toolbar-button)
+
+## Export Formats
+
+| Format | Implementation | Output |
+| --- | --- | --- |
+| HTML | `serializeHtml` from `platejs/static` with `BaseEditorKit` and `EditorStatic` | `plate.html` |
+| PDF | `html2canvas-pro` snapshot converted with `pdf-lib` | `plate.pdf` |
+| Image | `html2canvas-pro` snapshot | `plate.png` |
+| Markdown | `editor.getApi(MarkdownPlugin).markdown.serialize()` | `plate.md` |
+| Word | `exportToDocx(editor.children, { editorPlugins })` from `@platejs/docx-io` | `plate.docx` |
+
+The PDF and image exporters snapshot the current editable DOM. Use them for a
+quick client-side download, not for paginated print layout.
+
+## DOCX Static Kit
+
+Word export passes the base static editor kit plus `DocxExportKit` so custom
+nodes can render with DOCX-friendly components.
+
+[docx-export-kit registry content](https://platejs.org/r/docx-export-kit)
+
+`DocxExportKit` overrides code blocks, columns, equations, callouts, and table
+of contents rendering for the DOCX conversion path.
+
+## Plus Export
+
+Plate Plus includes a server-side export flow for PDF output with page settings.
+
+[export-pro registry content](https://platejs.org/r/export-pro)
+
+## Related
+
+- [DOCX Import/Export](/docs/docx-io) covers `@platejs/docx-io` options and plugin APIs.
+- [Markdown](/docs/markdown) covers Markdown serialization.
+- [Static Rendering](/docs/static) covers static editor rendering and HTML serialization.

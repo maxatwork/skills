@@ -1,0 +1,4 @@
+interface:
+  display_name: "Using Plate.js"
+  short_description: "Build and debug Plate.js editor features"
+  default_prompt: "Use $using-platejs to implement this Plate.js editor change and verify its user-visible behavior."

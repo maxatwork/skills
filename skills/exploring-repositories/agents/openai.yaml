@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explore Repositories"
+  short_description: "Clone and refresh reference repositories"
+  default_prompt: "Use $exploring-repositories to clone or refresh this repository for local inspection."

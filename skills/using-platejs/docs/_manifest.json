@@ -1,0 +1,2183 @@
+{
+  "source": "https://platejs.org/docs",
+  "generated_at": "2026-08-23T05:54:04.033607+00:00",
+  "live_route_count": 265,
+  "markdown_route_count": 126,
+  "markdown_unavailable_route_count": 139,
+  "routes": [
+    {
+      "file": "index.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5064,
+      "route": "/docs"
+    },
+    {
+      "file": "ai.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 28934,
+      "route": "/docs/ai"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/api"
+    },
+    {
+      "file": "api/cn.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4973,
+      "route": "/docs/api/cn"
+    },
+    {
+      "file": "api/core.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 29454,
+      "route": "/docs/api/core"
+    },
+    {
+      "file": "api/core/plate-components.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 11664,
+      "route": "/docs/api/core/plate-components"
+    },
+    {
+      "file": "api/core/plate-controller.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6158,
+      "route": "/docs/api/core/plate-controller"
+    },
+    {
+      "file": "api/core/plate-editor.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 14050,
+      "route": "/docs/api/core/plate-editor"
+    },
+    {
+      "file": "api/core/plate-plugin.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 22970,
+      "route": "/docs/api/core/plate-plugin"
+    },
+    {
+      "file": "api/core/plate-store.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6550,
+      "route": "/docs/api/core/plate-store"
+    },
+    {
+      "file": "api/floating.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 9244,
+      "route": "/docs/api/floating"
+    },
+    {
+      "file": "api/plate.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 3314,
+      "route": "/docs/api/plate"
+    },
+    {
+      "file": "api/react-utils.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7519,
+      "route": "/docs/api/react-utils"
+    },
+    {
+      "file": "api/resizable.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 11252,
+      "route": "/docs/api/resizable"
+    },
+    {
+      "file": "api/slate.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6056,
+      "route": "/docs/api/slate"
+    },
+    {
+      "file": "api/slate/editor-api.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 47747,
+      "route": "/docs/api/slate/editor-api"
+    },
+    {
+      "file": "api/slate/editor-transforms.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 28419,
+      "route": "/docs/api/slate/editor-transforms"
+    },
+    {
+      "file": "api/slate/element.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5303,
+      "route": "/docs/api/slate/element"
+    },
+    {
+      "file": "api/slate/location.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 2440,
+      "route": "/docs/api/slate/location"
+    },
+    {
+      "file": "api/slate/location-ref.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4673,
+      "route": "/docs/api/slate/location-ref"
+    },
+    {
+      "file": "api/slate/node.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 17898,
+      "route": "/docs/api/slate/node"
+    },
+    {
+      "file": "api/slate/operation.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7110,
+      "route": "/docs/api/slate/operation"
+    },
+    {
+      "file": "api/slate/path.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 11053,
+      "route": "/docs/api/slate/path"
+    },
+    {
+      "file": "api/slate/point.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4546,
+      "route": "/docs/api/slate/point"
+    },
+    {
+      "file": "api/slate/range.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6542,
+      "route": "/docs/api/slate/range"
+    },
+    {
+      "file": "api/slate/text.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5194,
+      "route": "/docs/api/slate/text"
+    },
+    {
+      "file": "api/utils.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7572,
+      "route": "/docs/api/utils"
+    },
+    {
+      "file": "autoformat.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4550,
+      "route": "/docs/autoformat"
+    },
+    {
+      "file": "basic-blocks.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7077,
+      "route": "/docs/basic-blocks"
+    },
+    {
+      "file": "basic-marks.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6923,
+      "route": "/docs/basic-marks"
+    },
+    {
+      "file": "block-menu.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7263,
+      "route": "/docs/block-menu"
+    },
+    {
+      "file": "block-placeholder.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5885,
+      "route": "/docs/block-placeholder"
+    },
+    {
+      "file": "block-selection.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 14118,
+      "route": "/docs/block-selection"
+    },
+    {
+      "file": "blockquote.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 3553,
+      "route": "/docs/blockquote"
+    },
+    {
+      "file": "bold.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4239,
+      "route": "/docs/bold"
+    },
+    {
+      "file": "callout.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5029,
+      "route": "/docs/callout"
+    },
+    {
+      "file": "caption.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5571,
+      "route": "/docs/caption"
+    },
+    {
+      "file": "code.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4683,
+      "route": "/docs/code"
+    },
+    {
+      "file": "code-block.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 8223,
+      "route": "/docs/code-block"
+    },
+    {
+      "file": "code-drawing.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 8146,
+      "route": "/docs/code-drawing"
+    },
+    {
+      "file": "column.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6647,
+      "route": "/docs/column"
+    },
+    {
+      "file": "combobox.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 9173,
+      "route": "/docs/combobox"
+    },
+    {
+      "file": "comment.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 11758,
+      "route": "/docs/comment"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/ai-menu"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/ai-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/ai-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/align-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/block-context-menu"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/block-discussion"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/block-draggable"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/block-list"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/block-selection"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/block-suggestion"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/blockquote-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/callout-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/caption"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/code-block-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/code-drawing-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/code-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/column-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/comment-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/comment-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/cursor-overlay"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/date-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/editor"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/emoji-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/emoji-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/equation-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/equation-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/excalidraw-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/export-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/fixed-toolbar"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/fixed-toolbar-buttons"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/fixed-toolbar-classic-buttons"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/floating-toolbar"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/floating-toolbar-buttons"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/floating-toolbar-classic-buttons"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/font-color-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/font-size-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/footnote-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/ghost-text"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/heading-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/highlight-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/history-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/hr-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/import-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/indent-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/inline-combobox"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/insert-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/insert-toolbar-classic-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/kbd-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/line-height-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/link-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/link-toolbar"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/link-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/list-classic-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/list-classic-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/list-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/mark-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/media-audio-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/media-embed-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/media-file-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/media-image-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/media-placeholder-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/media-preview-dialog"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/media-toolbar"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/media-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/media-upload-toast"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/media-video-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/mention-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/mode-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/more-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/paragraph-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/remote-cursor-overlay"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/resize-handle"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/search-highlight-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/select-editor"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/slash-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/suggestion-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/suggestion-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/table-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/table-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/tag-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/toc-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/toggle-node"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/toggle-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/toolbar"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/turn-into-toolbar-button"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/components/turn-into-toolbar-classic-button"
+    },
+    {
+      "file": "controlled.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6016,
+      "route": "/docs/controlled"
+    },
+    {
+      "file": "copilot.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 14111,
+      "route": "/docs/copilot"
+    },
+    {
+      "file": "csv.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4028,
+      "route": "/docs/csv"
+    },
+    {
+      "file": "cursor-overlay.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5357,
+      "route": "/docs/cursor-overlay"
+    },
+    {
+      "file": "date.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7252,
+      "route": "/docs/date"
+    },
+    {
+      "file": "debugging.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7377,
+      "route": "/docs/debugging"
+    },
+    {
+      "file": "discussion.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5789,
+      "route": "/docs/discussion"
+    },
+    {
+      "file": "dnd.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 10389,
+      "route": "/docs/dnd"
+    },
+    {
+      "file": "docx.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 3094,
+      "route": "/docs/docx"
+    },
+    {
+      "file": "docx-io.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 9932,
+      "route": "/docs/docx-io"
+    },
+    {
+      "file": "editing-behavior.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 11173,
+      "route": "/docs/editing-behavior"
+    },
+    {
+      "file": "editor.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 10014,
+      "route": "/docs/editor"
+    },
+    {
+      "file": "editor-methods.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7283,
+      "route": "/docs/editor-methods"
+    },
+    {
+      "file": "emoji.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7638,
+      "route": "/docs/emoji"
+    },
+    {
+      "file": "equation.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 8806,
+      "route": "/docs/equation"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/ai"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/align"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/autoformat"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/basic-nodes"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/block-menu"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/block-placeholder"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/block-selection"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/callout"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/code-block"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/code-drawing"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/collaboration"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/column"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/csv"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/cursor-overlay"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/date"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/discussion"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/dnd"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/docx"
+    },
+    {
+      "file": "examples/editable-voids.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 2568,
+      "route": "/docs/examples/editable-voids"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/emoji"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/equation"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/excalidraw"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/exit-break"
+    },
+    {
+      "file": "examples/export.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 2467,
+      "route": "/docs/examples/export"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/find-replace"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/floating-toolbar"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/font"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/footnote"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/html"
+    },
+    {
+      "file": "examples/huge-document.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 508,
+      "route": "/docs/examples/huge-document"
+    },
+    {
+      "file": "examples/hundreds-editors.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 2026,
+      "route": "/docs/examples/hundreds-editors"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/indent"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/line-height"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/link"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/list"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/list-classic"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/markdown"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/markdown-streaming"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/media"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/mention"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/plugin-rules"
+    },
+    {
+      "file": "examples/preview-markdown.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 2296,
+      "route": "/docs/examples/preview-markdown"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/server-side"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/single-block"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/slash-command"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/slate-to-html"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/table"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/table-nomerge"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/toc"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/examples/toggle"
+    },
+    {
+      "file": "examples/version-history.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 2533,
+      "route": "/docs/examples/version-history"
+    },
+    {
+      "file": "excalidraw.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6428,
+      "route": "/docs/excalidraw"
+    },
+    {
+      "file": "exit-break.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5765,
+      "route": "/docs/exit-break"
+    },
+    {
+      "file": "feature-kits.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5383,
+      "route": "/docs/feature-kits"
+    },
+    {
+      "file": "font.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6120,
+      "route": "/docs/font"
+    },
+    {
+      "file": "footnote.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 15967,
+      "route": "/docs/footnote"
+    },
+    {
+      "file": "forced-layout.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5468,
+      "route": "/docs/forced-layout"
+    },
+    {
+      "file": "form.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 12500,
+      "route": "/docs/form"
+    },
+    {
+      "file": "heading.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 9050,
+      "route": "/docs/heading"
+    },
+    {
+      "file": "highlight.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4940,
+      "route": "/docs/highlight"
+    },
+    {
+      "file": "horizontal-rule.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6380,
+      "route": "/docs/horizontal-rule"
+    },
+    {
+      "file": "html.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 22318,
+      "route": "/docs/html"
+    },
+    {
+      "file": "indent.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7048,
+      "route": "/docs/indent"
+    },
+    {
+      "file": "installation.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 3044,
+      "route": "/docs/installation"
+    },
+    {
+      "file": "installation/docs.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7080,
+      "route": "/docs/installation/docs"
+    },
+    {
+      "file": "installation/manual.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 11825,
+      "route": "/docs/installation/manual"
+    },
+    {
+      "file": "installation/mcp.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5190,
+      "route": "/docs/installation/mcp"
+    },
+    {
+      "file": "installation/next.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 11383,
+      "route": "/docs/installation/next"
+    },
+    {
+      "file": "installation/node.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5754,
+      "route": "/docs/installation/node"
+    },
+    {
+      "file": "installation/plate-ui.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 8238,
+      "route": "/docs/installation/plate-ui"
+    },
+    {
+      "file": "installation/react.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 11347,
+      "route": "/docs/installation/react"
+    },
+    {
+      "file": "installation/rsc.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4317,
+      "route": "/docs/installation/rsc"
+    },
+    {
+      "file": "italic.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4306,
+      "route": "/docs/italic"
+    },
+    {
+      "file": "kbd.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4219,
+      "route": "/docs/kbd"
+    },
+    {
+      "file": "line-height.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5592,
+      "route": "/docs/line-height"
+    },
+    {
+      "file": "link.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 18434,
+      "route": "/docs/link"
+    },
+    {
+      "file": "list.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 10317,
+      "route": "/docs/list"
+    },
+    {
+      "file": "list-classic.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 13879,
+      "route": "/docs/list-classic"
+    },
+    {
+      "file": "markdown.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 47304,
+      "route": "/docs/markdown"
+    },
+    {
+      "file": "media.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 25490,
+      "route": "/docs/media"
+    },
+    {
+      "file": "mention.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7783,
+      "route": "/docs/mention"
+    },
+    {
+      "file": "migration/slate-to-plate.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6227,
+      "route": "/docs/migration/slate-to-plate"
+    },
+    {
+      "file": "migration/v48.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 145635,
+      "route": "/docs/migration/v48"
+    },
+    {
+      "file": "multi-select.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6095,
+      "route": "/docs/multi-select"
+    },
+    {
+      "file": "navigation-feedback.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 11015,
+      "route": "/docs/navigation-feedback"
+    },
+    {
+      "file": "performance.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 3195,
+      "route": "/docs/performance"
+    },
+    {
+      "file": "playwright.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 9176,
+      "route": "/docs/playwright"
+    },
+    {
+      "file": "plugin.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 12343,
+      "route": "/docs/plugin"
+    },
+    {
+      "file": "plugin-components.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7312,
+      "route": "/docs/plugin-components"
+    },
+    {
+      "file": "plugin-context.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6826,
+      "route": "/docs/plugin-context"
+    },
+    {
+      "file": "plugin-input-rules.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 36985,
+      "route": "/docs/plugin-input-rules"
+    },
+    {
+      "file": "plugin-methods.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 13603,
+      "route": "/docs/plugin-methods"
+    },
+    {
+      "file": "plugin-rules.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 17871,
+      "route": "/docs/plugin-rules"
+    },
+    {
+      "file": "plugin-shortcuts.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 8382,
+      "route": "/docs/plugin-shortcuts"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/plugins"
+    },
+    {
+      "file": "releases.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 421,
+      "route": "/docs/releases"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/releases/49"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/releases/50"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/releases/51"
+    },
+    {
+      "file": null,
+      "method": "markdown-unavailable",
+      "markdown_status": 404,
+      "markdown_content_type": "text/plain",
+      "bytes": 0,
+      "route": "/docs/releases/52"
+    },
+    {
+      "file": "single-block.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4570,
+      "route": "/docs/single-block"
+    },
+    {
+      "file": "slash-command.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4701,
+      "route": "/docs/slash-command"
+    },
+    {
+      "file": "static.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 14743,
+      "route": "/docs/static"
+    },
+    {
+      "file": "strikethrough.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4631,
+      "route": "/docs/strikethrough"
+    },
+    {
+      "file": "subscript.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4335,
+      "route": "/docs/subscript"
+    },
+    {
+      "file": "suggestion.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 12445,
+      "route": "/docs/suggestion"
+    },
+    {
+      "file": "superscript.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4399,
+      "route": "/docs/superscript"
+    },
+    {
+      "file": "tabbable.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6441,
+      "route": "/docs/tabbable"
+    },
+    {
+      "file": "table.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 32618,
+      "route": "/docs/table"
+    },
+    {
+      "file": "text-align.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5645,
+      "route": "/docs/text-align"
+    },
+    {
+      "file": "toc.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 8995,
+      "route": "/docs/toc"
+    },
+    {
+      "file": "toggle.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7148,
+      "route": "/docs/toggle"
+    },
+    {
+      "file": "toolbar.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7587,
+      "route": "/docs/toolbar"
+    },
+    {
+      "file": "trailing-block.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 5765,
+      "route": "/docs/trailing-block"
+    },
+    {
+      "file": "troubleshooting.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6235,
+      "route": "/docs/troubleshooting"
+    },
+    {
+      "file": "typescript.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 7266,
+      "route": "/docs/typescript"
+    },
+    {
+      "file": "underline.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 4334,
+      "route": "/docs/underline"
+    },
+    {
+      "file": "unit-testing.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 6163,
+      "route": "/docs/unit-testing"
+    },
+    {
+      "file": "yjs.md",
+      "method": "markdown-endpoint",
+      "markdown_status": 200,
+      "markdown_content_type": "text/markdown",
+      "bytes": 21293,
+      "route": "/docs/yjs"
+    }
+  ],
+  "unreachable_linked_routes": [
+    {
+      "route": "/docs/components/cli",
+      "status": 404
+    },
+    {
+      "route": "/docs/plugins/table",
+      "status": 404
+    },
+    {
+      "route": "/docs/plugins/mention",
+      "status": 404
+    },
+    {
+      "route": "/docs/plugins/ai",
+      "status": 404
+    },
+    {
+      "route": "/docs/plugins/markdown",
+      "status": 404
+    },
+    {
+      "route": "/docs/transforms",
+      "status": 404
+    },
+    {
+      "route": "/docs/components/ai-loading-bar",
+      "status": 404
+    },
+    {
+      "route": "/docs/components/ai-anchor-element",
+      "status": 404
+    },
+    {
+      "route": "/docs/components/ai-leaf",
+      "status": 404
+    },
+    {
+      "route": "/docs/components/installation/manual",
+      "status": 404
+    },
+    {
+      "route": "/docs/import",
+      "status": 404
+    },
+    {
+      "route": "/docs/export",
+      "status": 404
+    },
+    {
+      "route": "/docs/components/callout",
+      "status": 404
+    }
+  ]
+}
