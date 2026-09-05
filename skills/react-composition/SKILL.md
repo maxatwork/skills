@@ -97,6 +97,11 @@ read as composition and binding, without detailed styling or data-access code.
 - Visual props describe rendering and interaction. Resolve permissions, current
   user identity, domain relationships, and navigation destinations in the
   application layer. Preserve actual link semantics when binding navigation.
+  For styled router links, use a supported typed host adapter, such as TanStack
+  Router's `createLink`, or equivalent supported composition. Preserve typed
+  destinations, refs, preload, active state, and modified-click behavior. Keep
+  native anchors when the destination requires document navigation, including
+  authentication handoffs.
 - Pass the values a view needs. A whole entity, query result, mutation object, or
   hook return object usually gives the view unrelated knowledge. Reuse existing
   types where they fit the interface; create a projection when it removes coupling.
@@ -116,6 +121,10 @@ read as composition and binding, without detailed styling or data-access code.
 - Give operations explicit success and failure behavior. A handled failure must
   not look like success to callers deciding whether to clear a draft or close a
   dialog. Preserve user input on failure.
+- Treat server acknowledgement as the write's commit boundary. Cache refresh
+  and navigation are follow-up phases; their failure must not cause the write to
+  be submitted again. Retain the accepted result when callers need to retry
+  those follow-up operations.
 
 ## Give state and resources an owner
 
