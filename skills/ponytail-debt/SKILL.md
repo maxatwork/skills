@@ -1,11 +1,6 @@
 ---
 name: ponytail-debt
-description: >
-  Harvest every `ponytail:` comment in the codebase into a debt ledger, so the
-  deliberate shortcuts and deferrals ponytail leaves behind get tracked instead
-  of rotting into "later means never". Use when the user says "ponytail debt",
-  "/ponytail-debt", "what did ponytail defer", "list the shortcuts", "ponytail
-  ledger", or "what did we mark to do later". One-shot report, changes nothing.
+description: "Inventory ponytail shortcut comments and their limits or upgrade triggers. Use when the user requests a shortcut or debt ledger; changes no code."
 ---
 
 Every deliberate ponytail shortcut is marked with a `ponytail:` comment naming
@@ -17,7 +12,9 @@ can't quietly become permanent.
 Grep the repo for comment markers, skipping `node_modules`, `.git`, and build
 output:
 
-`grep -rnE '(#|//) ?ponytail:' .`  (add other comment prefixes if your stack uses them)
+`rg -n --glob '!node_modules/**' --glob '!.git/**' --glob '!dist/**' --glob '!build/**' '(#|//) ?ponytail:' .`
+
+Honor repository ignores and add the stack's other generated-output paths or comment prefixes when needed.
 
 Each hit is one ledger row. The comment prefix keeps prose that merely mentions
 the convention out of the ledger.
@@ -39,6 +36,4 @@ End with `<N> markers, <M> with no trigger.` Nothing found: `No ponytail: debt. 
 
 ## Boundaries
 
-Reads and reports only, changes nothing. To persist it, ask and it writes the
-ledger to a file (e.g. `PONYTAIL-DEBT.md`). One-shot. "stop ponytail-debt" or
-"normal mode" to revert.
+Read and report without changing source code. If the user requested a saved ledger, write it at the requested path or the repository's report location; otherwise return it inline.

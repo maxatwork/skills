@@ -1,29 +1,25 @@
 ---
 name: typescript-best-practices
-description: TypeScript best practices. Use when reading or editing any .ts or .tsx file.
+description: "Apply TypeScript type-modeling and boundary-validation conventions when implementing or reviewing TypeScript code. Simple source lookup does not need this workflow."
 ---
 
 # TypeScript best practices
 
-Apply the **type-system-discipline** principle skill first; this skill grounds it in TypeScript syntax.
+Use these conventions where they improve the changed interface or invariant. Follow the repository's established types and test setup; this skill has no prerequisite skill.
 
-| Rule | Summary |
-|------|---------|
-| Discriminated unions | Model variants with a `kind` literal discriminant so impossible states can't be represented. No optional-field bags. |
-| Branded types | Brand primitives with `& { readonly __brand: "X" }` so they can't be mixed up. Validate once at creation. |
-| Constructive modeling | Build the shape so the illegal value can't be constructed. `[T, ...T[]]` for non-empty, `[T, T][]` for even length, `start` plus `duration` for a range. Not a runtime guard, not a wish for refinement types. |
-| Simplest total type | Keep `T[]` while every operation on it stays total. Strengthen to `NonEmpty<T>` only where the loose type forces `!`, a cast, or a "should never happen" throw. |
-| `unknown` over `any` | External data is `unknown`. `any` disables type checking everywhere it touches. |
-| No `as` casts | Every `as` is a runtime crash waiting. Cast only after validation. |
-| Narrowing hierarchy | Discriminant switch > `in` operator > `typeof`/`instanceof` > user-defined type guard > `as`. |
-| Type guards | Must verify the claim. A lying guard is worse than `as` because the bug hides behind a name that says it's safe. Name them `isX` or `hasX`. |
-| Exhaustiveness | Inline `const _exhaustive: never = x;` in default arms so the compiler errors when a new variant is added. |
-| `satisfies` over `as` | Validates the value without widening literal types. |
-| Boundary validation | Validate where data crosses in; trust types inside. See the **boundary-discipline** principle skill. |
-| Temporal values | Do not order timestamp strings unless one schema guarantees identical canonical formatting. Parse to epochs or dates, or compare them in the database. |
-| Schema-derived types | Reach for `Pick`/`Omit`/`Parameters`/`ReturnType`/`Awaited`/`typeof` before declaring a new interface. |
-| Object args | Pass objects, not positional, so argument order is self-documenting. Skip on hot paths (per-frame render, tokenizers, parsers). |
-| Real tests | Don't mock what you can run. Prefer the framework's real test primitives with leak/disposable checks, and verify UI in a running build. Mock only what you can't run locally. |
-| Structured telemetry | Prefer structured logger diagnostics with enough context to debug from an id. No `console.log` in shipped code. |
+| Decision | Guidance |
+| --- | --- |
+| State variants | Use discriminated unions when optional fields would admit invalid combinations. Keep ordinary optional properties when they represent actual optional data. |
+| Semantic identifiers | Brand primitives where mixing identifiers is a real error and the project can preserve the brand through its lifecycle. |
+| Total operations | Keep a plain array when its operations handle emptiness. Strengthen to a non-empty shape where an operation requires it. |
+| External data | Receive untrusted values as `unknown`, parse at the boundary, and trust validated domain types inside. Derive from authoritative schemas. |
+| Assertions | Prefer inferred types, narrowing, and `satisfies`. Use an assertion only with evidence the compiler cannot express, such as a validated boundary or constrained interoperability; keep it narrow and explain the invariant when non-obvious. `as const` is not a runtime validation claim. |
+| Type guards | Verify the full claim and name guards `isX` or `hasX`. |
+| Exhaustiveness | Use a `never` check when every variant must be handled so new variants produce a compiler error. |
+| Derived types | Prefer an existing type or `Pick`, `Omit`, `Parameters`, `ReturnType`, `Awaited`, or `typeof` over a duplicate declaration when it expresses the same contract. |
+| Temporal values | Order timestamp strings only when one schema guarantees identical canonical formatting. Otherwise compare epochs, dates, or database temporal values. |
+| Arguments | Use object arguments when named fields prevent ambiguity or support a cohesive options object. Keep clear positional signatures and established APIs when they serve callers. |
+| Verification | Use the repository's real test primitives and local services where appropriate. Check changed UI behavior in the running application; mocks belong at meaningful external boundaries. |
+| Diagnostics | Use the project's logging conventions with enough context to diagnose the operation, without exposing secrets. |
 
-Examples: `references/patterns.md`.
+Read [patterns](references/patterns.md) only for examples relevant to the current change.

@@ -1,6 +1,6 @@
 ---
 name: reflect
-description: Use ONLY when the user explicitly says reflect. Review the active transcript through three lenses, surface durable learnings, and route each to a concrete edit on an existing skill.
+description: "Use ONLY when the user asks to reflect on the current work. Review the transcript for durable lessons and propose concrete instruction changes."
 disable-model-invocation: true
 metadata:
   opencode/autoinvoke: "false"
@@ -10,10 +10,11 @@ metadata:
 
 Mine the current conversation for durable learnings, then route them into skill edits.
 
-## When to invoke
+## When reflection is useful
 
-- The user says "reflect" or invokes the harness's reflect command.
-- A complex task (5+ tool calls) just landed cleanly and the recipe is worth keeping.
+Invoke only when the user requests reflection. The following help identify useful material within that requested review; they are not automatic triggers.
+
+- A task exposed a reusable workflow or decision.
 - The agent hit dead ends, found the working path, and the path generalizes.
 - The user corrected the agent's approach mid-task.
 - A non-trivial workflow emerged that isn't captured anywhere.
@@ -75,15 +76,13 @@ full output inlined where marked. The synthesizer returns a structured Accepted
 
 ### 4. Structural enforcement check
 
-Sanity-check the synthesizer's Accepted list. For any item that would be enforced more reliably by a lint rule, script, metadata flag, or runtime check, move it from Accepted to Backlog. The synthesizer already applies this criterion; this is a final pass before edits land. See the **encode-lessons-in-structure** principle skill.
+Sanity-check the synthesizer's Accepted list. For any item that would be enforced more reliably by a lint rule, script, metadata flag, or runtime check, move it from Accepted to Backlog. The synthesizer already applies this criterion; this is a final pass before edits land.
 
 ### 5. Apply
 
-Before applying any Accepted edit, present the synthesizer's full Accepted/Rejected/Backlog output to the user and wait for explicit approval. The user picks which subset to apply and may redirect routings. Skill changes affect every future agent in the org; do not auto-apply.
+Present the Accepted/Rejected/Backlog output before applying persistent instruction edits. Apply the subset the user authorizes and honor any changed routing. If the user already approved the concrete findings or explicitly requested their application, reuse that approval rather than asking again. A request for reflection alone authorizes the review, not the edits.
 
-When a devex or backlog tracker is configured, record Backlog items there.
-Otherwise report them without attempting an unconfigured submission. Those are
-tracker submissions, not skill edits. Only the Accepted list waits for approval.
+File Backlog items only when tracker submission is part of the user's request or existing authorization. A configured tracker supplies a destination, not permission to post. Otherwise include the items in the report.
 
 For each approved Accepted item, follow the Routing field exactly:
 

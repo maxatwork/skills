@@ -1,6 +1,6 @@
 # UI Prototype
 
-Generate **several radically different UI variations** on a single route, switchable from a floating bottom bar. The user flips between variants in the browser, picks one (or steals bits from each), then throws the rest away.
+When the user needs to compare visual alternatives, generate **structurally different UI variations** on a single route, switchable from a floating bottom bar. The user flips between variants in the browser, picks one (or steals bits from each), then throws the rest away.
 
 If the question is about logic/state rather than what something looks like — wrong branch. Use [LOGIC.md](LOGIC.md).
 
@@ -35,7 +35,7 @@ In both sub-shapes the floating bottom bar is identical.
 
 ### 1. State the question and pick N
 
-Default to **3 variants**. More than 5 stops being radically different and starts being noise — cap there.
+For open visual comparison, three variants is a useful default. Use the requested number, or fewer when they expose the real decision. A single concrete prototype is enough when the question is not a comparison.
 
 Write down the plan in one line, in the prototype's location or a top-of-file comment:
 
@@ -97,12 +97,7 @@ Surface the URL (and the `?variant=` keys). The user will flip through whenever 
 
 ### 6. Capture the answer and clean up
 
-Once a variant has won, capture the answer — which variant and why — then capture the prototype the way the [SKILL](SKILL.md) describes. Fold the winner into the real code and move the rest onto the throwaway branch, not into main:
-
-- **Sub-shape A** — fold the winner into the existing page; drop the losing variants and the switcher from main.
-- **Sub-shape B** — promote the winning variant to a real route; drop the throwaway route and the switcher from main.
-
-The full set of variants is the primary source, so it lands on the throwaway branch, not the bin — variant components and the switcher left in the main branch rot fast and confuse the next reader.
+Deliver the variants, run instructions, findings, and the user's choice if one was given. Preserve the artifact under [the shared scope rules](SKILL.md). If implementation is also requested, adapt the selected design to production conventions and checks, then remove temporary variants from the shipping path. Branches and issue updates are optional capture mechanisms within the authorized work.
 
 ## Anti-patterns
 

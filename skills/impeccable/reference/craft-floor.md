@@ -16,15 +16,15 @@ Each of these is a check on the built result, not an intention. Run them togethe
 - **Copy:** the product's own language. Controls name their action; errors name the problem and the recovery.
 - **Coverage:** every brief requirement present and findable within seconds.
 
-## Refuse
+## Patterns to question
 
-These are the category's defaults, not bans: the brief's own words can earn any of them. Reaching for one when the axis is free means you were not deciding; recognizing that means rewriting the element, not softening it.
+These are design defaults to question, not universal bans. The user's brief, established identity, product requirements, and accessibility needs govern the choice. Change a pattern when it weakens this design; do not add a new redesign task merely because it appears in this list.
 
 Page scaffolds:
 
-- Same-size cards of icon plus heading plus text as the page structure. Cards are the lazy container; nested cards are always wrong.
+- Repeated same-size cards used without an information or interaction reason. Use containers when they help grouping or task completion, including nested groups when the hierarchy needs them.
 - The hero-metric template: big number, small label, supporting stats, accent.
-- A kicker or eyebrow above a heading. This one is a ban, not a default: no brief earns it back. The heading carries its own weight; delete the label and let the heading speak.
+- A kicker or eyebrow that repeats the heading. Keep it when the user requests it or it supplies useful context the heading does not.
 - Section numbers (01 / 02 / 03) unless the sequence itself carries information the reader needs.
 - A modal for a task that needs neither interruption nor protected focus.
 

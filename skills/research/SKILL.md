@@ -1,12 +1,12 @@
 ---
 name: research
-description: Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or a research pass delegated when the active harness supports background work.
+description: "Investigate a question using primary sources. Use for a requested research pass or cited report; narrow documentation questions can be answered inline."
 ---
 
-Use a background worker when the active harness provides one. If it does not, do the research in the current session and state that no background worker was available.
+# Research
 
-Its job:
+Investigate the requested question using primary sources: official documentation, source code, specifications, or first-party data. Follow material claims to the source that owns them and distinguish findings from inference.
 
-1. Investigate the question against **primary sources** — official docs, source code, specs, first-party APIs — not a secondary write-up of them. Follow every claim back to the source that owns it.
-2. Write the findings to a single Markdown file, citing each claim's source.
-3. Save it where the repo already keeps such notes; match the existing convention, and if there is none, put it somewhere sensible and say where.
+Use a worker when independent research benefits from delegation and the runtime permits it. Otherwise research inline; a worker is not a prerequisite.
+
+For a requested research pass or report, save a cited Markdown note in the requested location or the repository's existing convention. For a narrow documentation question, answer inline with the relevant citations unless the user asked for a file. State unresolved questions and evidence limits without expanding into an unrelated investigation.

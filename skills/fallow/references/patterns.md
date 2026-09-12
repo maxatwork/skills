@@ -26,7 +26,7 @@ Step-by-step workflows for common fallow usage scenarios.
 
 ## Full Project Audit
 
-Complete codebase hygiene audit.
+Read-only codebase hygiene audit. Complete the requested analysis and report findings. The optional fix steps below apply only when cleanup is also requested; an audit does not require an auto-fix preview.
 
 ### Step 1: Run full analysis
 
@@ -50,7 +50,7 @@ fallow dupes --format json --quiet
 fallow fix --dry-run --format json --quiet
 ```
 
-### Step 5: Apply fixes (after user confirmation)
+### Step 5: Apply fixes only when cleanup is requested
 
 ```bash
 fallow fix --yes --format json --quiet
@@ -521,9 +521,9 @@ Parse the JSON `changes` array. Each entry shows:
 - `name`: the symbol or dependency being removed
 - `line`: the line number
 
-### Step 3: Confirm with user before applying
+### Step 3: Check scope and authorization
 
-Show the proposed changes. Wait for user confirmation.
+Show the proposed changes. Reuse authorization for the requested cleanup; ask only when a proposed change expands scope or needs a new decision. A read-only audit stops at findings.
 
 ### Step 4: Apply
 
@@ -539,7 +539,7 @@ fallow dead-code --format json --quiet
 
 ### Step 6: Run project tests
 
-After auto-fix, always run the project's test suite to verify nothing broke.
+After auto-fix, run the repository checks relevant to the removed code and its consumers. Broaden testing when the changed contract or new failures justify it.
 
 ---
 

@@ -1,16 +1,10 @@
 ---
 name: ponytail-audit
-description: >
-  Whole-repo audit for over-engineering. Like ponytail-review, but scans the
-  entire codebase instead of a diff: a ranked list of what to delete, simplify,
-  or replace with stdlib/native equivalents. Use when the user says "audit this
-  codebase", "audit for over-engineering", "what can I delete from this repo",
-  "find bloat", "ponytail-audit", or "/ponytail-audit". One-shot report, does
-  not apply fixes.
+description: "Audit a whole codebase for unnecessary complexity when the user asks for over-engineering or bloat analysis. Return findings without applying fixes."
 ---
 
 ponytail-review, repo-wide. Scan the whole tree instead of a diff. Rank
-findings biggest cut first.
+findings by maintenance benefit and confidence that behavior is preserved.
 
 ## Tags
 
@@ -24,6 +18,8 @@ Same as ponytail-review:
 
 ## Hunt
 
+These are candidates, not automatic deletions. Confirm actual consumers and preserve behavior, contracts, and meaningful responsibility boundaries before recommending a cut.
+
 Deps the stdlib or platform already ships, single-implementation interfaces,
 factories with one product, wrappers that only delegate, files exporting one
 thing, dead flags and config, hand-rolled stdlib.
@@ -31,7 +27,7 @@ thing, dead flags and config, hand-rolled stdlib.
 ## Output
 
 One line per finding, ranked: `<tag> <what to cut>. <replacement>. [path]`.
-End with `net: -<N> lines, -<M> deps possible.` Nothing to cut: `Lean already. Ship.`
+When useful, estimate removable lines and dependencies and label the estimate. With no findings, say that no unnecessary complexity was identified in the reviewed scope; this is not a release verdict.
 
 ## Boundaries
 

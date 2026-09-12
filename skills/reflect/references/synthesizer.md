@@ -29,9 +29,9 @@ Drop (implementation details that drift):
 
 Keep (durable patterns):
 - "closed regex enums for trigger detection are brittle; prefer schema-validated structures"
-- "skill descriptions front-load trigger keywords (60/40 trigger-vs-action)"
-- "skill-bundled scripts run under bun with own lockfile, not pnpm workspace"
-- "path-shaped triggers belong in `paths:`, not description prose"
+- "skill descriptions name the specific decision that needs the workflow"
+- "skill-bundled scripts declare their runtime and avoid depending on unrelated workspace setup"
+- "use the target runtime's supported invocation metadata and verify that it preserves the intended discovery policy"
 
 Output exactly the format below. No preamble, no narration. One sentence per cell. A reviewer should read each Problem/Proposal pair in 5 seconds.
 
@@ -43,7 +43,7 @@ Output exactly the format below. No preamble, no narration. One sentence per cel
 | <skill existed but didn't trigger> | <tune the skill's description so it fires next time> | <tune description: <skill path>> |
 | <new pattern, no existing skill is a real home> | <draft a new skill via create-skill> | <new skill via create-skill: <kebab-name>> |
 
-One row per finding. The user approves row by row.
+One row per finding. The user can approve a subset or the full concrete list; reuse approval already supplied.
 
 ## Rejected
 
@@ -53,4 +53,4 @@ For each rejected finding:
 
 ## Backlog
 
-For each item, describe the pattern, what was hit, and the suggested mechanism. The parent files each to whatever devex / backlog tracker the team uses.
+For each item, describe the pattern, what was hit, and the suggested mechanism. The parent reports each item and files it only when the user has authorized that tracker submission.

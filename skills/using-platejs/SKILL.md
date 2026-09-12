@@ -1,6 +1,6 @@
 ---
 name: using-platejs
-description: Implement or change React editor functionality built with Plate.js, including plugins, node and leaf components, editor behavior, serialization, Plate UI, collaboration, and editor-specific tests. Use for Plate/Slate integration work, not generic rich-text work unrelated to Plate.
+description: "Implement or debug Plate.js editor integration, plugins, selection, serialization, or collaboration. Use for Plate/Slate-specific editor behavior."
 ---
 
 # Using Plate.js
@@ -10,10 +10,7 @@ nodes or selections, editor plugins, or the browser editor surface.
 
 ## Start from the repository
 
-Before changing code, inspect the repository's instructions, package manifests,
-exact `platejs` and `@platejs/*` versions, editor factory or kit, plugin list,
-component registration, custom `Value` and node types, SSR/RSC boundaries,
-styles, and focused tests. Find the current editor seam and extend it. Do not
+Read repository instructions and confirm the installed `platejs` / `@platejs/*` versions when choosing APIs. Inspect the editor factory, plugin registration, node types, SSR/RSC boundaries, styles, or focused tests as the changed behavior requires. Find the current integration point and extend it. Do not
 replace an existing integration wholesale with a playground copy without
 first proving that the existing seam is the problem.
 
@@ -82,7 +79,7 @@ owner.
   reload, remote operation, or async boundary; resolve the current node/path at
   the moment of the action.
 
-Read [Plugin Configuration](docs/plugin.md),
+When exact plugin signatures are needed, consult the relevant section of [Plugin Configuration](docs/plugin.md),
 [Plugin Rules](docs/plugin-rules.md),
 [Plugin Components](docs/plugin-components.md), and the
 [core plugin API](docs/api/core/plate-plugin.md) for exact signatures.
@@ -131,37 +128,7 @@ do not silently drop custom node data. Read [Markdown](docs/markdown.md),
 as needed. A custom node that must render outside the editor needs a compatible
 static component and serializer/deserializer behavior too.
 
-## Feature-specific checks
-
-- **IDs and block interaction:** Plate's node IDs are used by features such as
-  block selection, block menus, drag-and-drop, tables, TOC, and toggles. Do not
-  disable node IDs while using those features without replacing the identity
-  contract.
-- **Drag and drop:** Use the documented `DndPlugin`/`BlockDraggable` wiring and
-  its provider, not only a visual grip. Keep drag identity stable for the
-  runtime and resolve the live path at drag start/drop. Reproduce insertion and
-  reload before trusting handle tests. See [Drag & Drop](docs/dnd.md).
-- **Tables:** Treat table, row, and cell nodes as a structured system. Resolve
-  the active cell/table immediately before a mutation, gate contextual UI on
-  the right table focus, and test the destination affordance as well as the
-  final cell values. See [Table](docs/table.md).
-- **Collaboration:** Keep document identity, Yjs state, providers, awareness,
-  lifecycle, and persistence responsibilities explicit. Integrate
-  `YjsPlugin` at the existing editor seam; do not serialize raw Yjs state as the
-  product document or assume local convergence proves a two-client flow. Test
-  convergence, teardown/reconnect, reload, and saved-state behavior. A second
-  page in the same browser context proves replication only; presence,
-  authorization, and revocation claims require independently authenticated
-  contexts. See [Collaboration](docs/yjs.md).
-- **Input rules and commands:** Prefer feature-owned input rules or the
-  documented autoformat/rule factories for Markdown shortcuts and text
-  substitutions. Test both keyboard and click paths for slash/combobox menus.
-  See [Plugin Input Rules](docs/plugin-input-rules.md),
-  [Autoformat](docs/autoformat.md), and [Slash Command](docs/slash-command.md).
-- **Performance:** Keep the editor instance stable, subscribe to the smallest
-  needed store slice, memoize expensive node UI, and compare large-document or
-  many-editor behavior only when the change affects it. See
-  [Performance](docs/performance.md) and the local examples.
+For IDs, drag and drop, tables, collaboration, input commands, or performance changes, read the relevant [feature checks](references/feature-checks.md).
 
 ## Verification
 

@@ -1,6 +1,6 @@
 ---
 name: show-me-your-work
-description: "Use ONLY when the user explicitly asks for a reviewable decision trail or invokes show-me-your-work. Keep a TSV log with one row per decision (what, why, evidence, result) for long-running or unattended work."
+description: "Use ONLY when the user requests a reviewable decision trail. Record significant choices, reasons, evidence, and results in a TSV log."
 disable-model-invocation: true
 metadata:
   opencode/autoinvoke: "false"
@@ -51,7 +51,7 @@ Commit it only when the work is ambitious enough that a reviewer needs the trail
 
 - One row is one decision or checkpoint. If it doesn't fit on one line, the decision isn't crisp yet.
 - Append-only. A wrong call gets a new row that supersedes it. Never edit or delete history.
-- Prefer evidence produced by committed scripts over hand-made one-offs, so a reviewer can re-run it (the **encode-lessons-in-structure** principle skill).
+- Prefer reproducible evidence and durable pointers. Commit supporting scripts only when appropriate to the requested work; a local reproducible command can be sufficient.
 
 ## Audit the log against the run record
 
@@ -62,12 +62,12 @@ directory or scan unrelated workspaces. If the runtime exposes no run record,
 compare the log with the current conversation and command outputs, and state
 that the proof is narrower.
 
-- Every row maps to a real action. Cut invented or aspirational entries.
+- Every row maps to a real action. Supersede an invented, mistaken, or aspirational entry with a correction identifying the original row and the evidence.
 - Each row's evidence resolves and shows what the row claims.
 - A fork, pivot, or abandoned approach that shaped the work but isn't logged is a gap. Add it.
-- Drop padding. If nobody would audit a row, it doesn't earn its place.
+- Avoid adding padding. Existing rows remain history; note any correction in a new row.
 
-Fix the log, not the story. If the work diverged from what a row claims, the row is wrong.
+When the work diverges from a row, append the correction or later outcome. Preserve the original row so the trail remains reviewable.
 
 ## Independent review of the trail
 
@@ -83,7 +83,7 @@ second-pass review and record that limitation.
 - Choices that look risky in hindsight (premature, scope-creeping, papering over a symptom).
 - Gaps the user would otherwise miss on a casual skim.
 
-Every reply for a run that produced a trail ends with an "Attention" section.
+At the final handoff for a run that produced a trail, include an "Attention" section.
 Lead with `reviewed by <model>` when a separate reviewer ran, or
 `reviewed inline` when the runtime could not provide one. Then list each flag
 pointing to specific rows or moments. "No flags" is a valid value. The
@@ -96,4 +96,4 @@ Read top to bottom, follow the evidence pointers, spot-check. GitHub renders a c
 
 ## Composing this skill
 
-Other skills route their audit trail here instead of inventing one. Reference it by name and let it own the format; don't restate the columns.
+When the user requests this trail, let this skill own its format. Other workflows can link the plain TSV template and helper as optional resources; they should not invoke this manual-only workflow automatically.

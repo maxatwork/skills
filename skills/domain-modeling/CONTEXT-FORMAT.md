@@ -1,4 +1,6 @@
-# CONTEXT.md Format
+# CONTEXT.md format
+
+Use this format when establishing a new glossary. Preserve an existing repository's document locations and responsibilities rather than replacing them with this template.
 
 ## Structure
 

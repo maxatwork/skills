@@ -107,9 +107,9 @@ fallow dead-code --format json --quiet
 
 ---
 
-## Syntactic Analysis: No TypeScript Compiler
+## Default syntactic analysis
 
-Fallow uses Oxc for pure syntactic analysis. It does not run the TypeScript compiler. This means:
+Default analysis uses Oxc without TypeScript checker evidence. Optional `--type-aware` analysis uses a version-matched semantic companion; see [advanced analysis](advanced-analysis.md). The limitations below describe default syntactic analysis, and neither mode replaces compiler diagnostics:
 
 - **Fully dynamic imports** (`import(variable)`) are not resolved. Only static strings, template literals with static prefixes, `import.meta.glob`, and `require.context` patterns
 - **Value-level type narrowing** is not performed. Fallow can't know that `if (x instanceof Foo)` means `Foo` is "used"

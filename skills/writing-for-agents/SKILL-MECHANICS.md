@@ -1,26 +1,23 @@
 # Skill mechanics
 
-The skill-specific branch of [`writing-for-agents`](SKILL.md): what changes when the document is a skill (frontmatter, the invocation choice, and router skills). Everything else about writing it is the universal reference in `SKILL.md`.
+## Discovery and invocation
 
-## Invocation
+Keep a concise `name` and `description` explaining the capability and the requests that need it. Preserve the existing invocation policy when updating a skill. New skills normally allow automatic discovery; make one explicit-only when the user requests that behavior.
 
-Two choices, trading the two loads:
+Automatic discovery and action authorization are separate. A discoverable skill can still require authorization for an external mutation. An explicit-only workflow should not be required as an automatic prerequisite of another skill.
 
-- A **model-invoked** skill keeps a `description`, so the agent can fire it autonomously, and other skills can reach it. You can still type its name: model-invocation always _includes_ user reach; a description only ever adds agent discovery, never removes the human's. The description is the skill's top-level context pointer, forced to stay loaded at all times: permanent context load in exchange for discoverability. A model-invoked skill whose content is all reference is also one home for shared reference: another skill can invoke it, so reference needed by several skills lives in one place. Mechanics: omit `disable-model-invocation`, and write a model-facing description carrying the trigger branches (the pointer-writing rules in `SKILL.md` apply in full).
-- A **user-invoked** skill strips the description from the agent's reach: only the human typing its name can invoke it, and no other skill can. Zero context load, but it spends cognitive load: you are the index that must remember it exists. Mechanics: set `disable-model-invocation: true`; the `description` becomes human-facing: a one-line summary, trigger lists stripped.
+For Codex, the existing sidecar convention is:
 
-Pick model-invocation only when the agent must reach the skill on its own, or another skill must. If it only ever fires by hand, make it user-invoked and pay no context load.
+```yaml
+policy:
+  allow_implicit_invocation: false
+```
 
-## Portable packaging across harnesses
+This belongs in `agents/openai.yaml`. Keep existing interface, dependency, and policy fields when editing it. If changing UI metadata, consult the active skill-creator's sidecar reference and follow its field constraints.
 
-The Agent Skills standard is the shared base: keep root frontmatter to
-`name`, `description`, `license`, `compatibility`, `metadata`, and
-`allowed-tools`. Some harnesses extend it. `disable-model-invocation` is
-understood by Pi, Claude Code, and GitHub Copilot, but Codex does not use that
-field and OpenCode versions without its newer policy support may ignore it.
+## Portable packaging
 
-For a user-invoked skill that must keep the same behavior everywhere, use the
-native extension where it exists and add the corresponding sidecars:
+Keep root frontmatter within the shared fields the target runtimes support. This library also uses the following extensions on its manual-only skills:
 
 ```yaml
 disable-model-invocation: true
@@ -28,28 +25,12 @@ metadata:
   opencode/autoinvoke: "false"
 ```
 
-Create `agents/openai.yaml` beside the skill for Codex:
+Preserve these existing compatibility fields and the Codex sidecar together. Runtime support can differ; verify the target runtime before claiming that one flag enforces policy everywhere. Keep the explicit-user condition in the description as a readable boundary rather than relying only on vendor-specific metadata.
 
-```yaml
-policy:
-  allow_implicit_invocation: false
-```
+## Composition
 
-The `metadata` values stay strings so they remain valid Agent Skills metadata;
-the sidecar is Codex-only and is ignored by the other harnesses. On an
-OpenCode version that does not honor `opencode/autoinvoke`, start the
-description with `Use ONLY when the user explicitly asks...` as a conservative
-fallback; runtimes that support user-only invocation still enforce the native
-flag. Do not rely on `argument-hint`, `version`, or another vendor field
-for core behavior: put accepted arguments and version notes in the body or in
-standard `metadata` instead.
+A router selects relevant guidance and respects each workflow's invocation boundary. It should not require the user to invoke a manual workflow just to complete ordinary work already within scope.
 
-Shared reference that two user-invoked skills both need can live in neither: with no descriptions, neither can fire the other. Push it to a plain file outside the skill system: external reference any skill can point at.
+If several workflows need the same method, put that method in a plain reference with a read condition. A reference may live beside a manual skill without invoking its full workflow. Link it directly and distinguish that limited reference use from performing the named skill's actions. Extract shared material only when it removes a real conflict or duplication.
 
-## Splitting by invocation
-
-The invocation cut of splitting (the sequence cut lives in `SKILL.md`): split off a model-invoked skill when you have a distinct leading word that should trigger it on its own (a trigger word you actually use in your prompts), or another skill must reach it. You pay context load for the new always-loaded description, so that independent reach has to be worth it.
-
-## Router skills
-
-When user-invoked skills multiply past what you can remember, that piled-up cognitive load is cured by a **router skill**: one user-invoked skill that names the others and when to reach for each, so the human has one skill to remember instead of many. It can only hint, never fire them: user-invoked skills have no description, so nothing but the human can reach them.
+Validate frontmatter, links, and policy preservation separately from behavior. A validator's rejection of an existing runtime-specific field is a compatibility limitation, not grounds to remove the user's invocation policy.

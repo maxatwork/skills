@@ -1,6 +1,6 @@
 ---
 name: exploring-repositories
-description: Use when a user asks to inspect, check, compare, reference, or borrow ideas from an external repository by clone URL, GitHub URL, owner/repo, or project name.
+description: "Inspect or compare an external repository using a durable local clone. Accept clone URLs, GitHub links, owner/repo names, or project names."
 ---
 
 # Exploring Repositories

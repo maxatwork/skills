@@ -1,6 +1,6 @@
 # TypeScript patterns
 
-Code examples for each rule in `SKILL.md`. The underlying principles are language-agnostic; see the **type-system-discipline** and **boundary-discipline** principle skills.
+Examples for the decisions in [SKILL.md](../SKILL.md). Load the relevant example rather than treating every pattern as mandatory.
 
 ## Branded types
 
@@ -19,7 +19,7 @@ function focusAgent(id: AgentId): void {
 }
 ```
 
-Match the `readonly __brand: 'X'` shape; don't invent a new convention.
+Use the repository's existing branding convention; this intersection is one example.
 
 ## Discriminated unions
 
@@ -145,11 +145,11 @@ A time range, as start plus duration:
 // Don't: a comment holds the invariant
 type TimeRange = { start: Date; end: Date }; // start <= end
 
-// Do: a negative range can't be written; derive end when needed
+// Alternative: keep one duration to validate; derive end when needed
 type TimeRange = { start: Date; durationMs: number };
 ```
 
-Keep `durationMs` a plain number. Brand it (per Branded types) only if a raw number could be passed where a duration is expected, not by reflex. A `Pairs<T>` is an even-length list under the interpretation you give it, the same way `{ start, durationMs }` is a range. Pick the representation that makes the bad state unconstructable, then expose the reading you need on top (`pairs.flat()`, a `rangeEnd()` helper).
+A plain `number` still permits negative or non-finite durations. Validate the required duration invariant at construction; use a validated type when callers need that guarantee. Brand it (per Branded types) only if a raw number could be passed where a duration is expected, not by reflex. A `Pairs<T>` is an even-length list under the interpretation you give it, the same way `{ start, durationMs }` is a range. Choose the representation and boundary validation that establish the required invariant, then expose the reading you need on top (`pairs.flat()`, a `rangeEnd()` helper).
 
 ## Simplest total type
 
@@ -195,9 +195,9 @@ function handle(input: unknown) {
 
 External sources include RPC payloads, `JSON.parse`, `postMessage`, IPC, file contents, environment variables, database results.
 
-## No `as` casts
+## Justified assertions
 
-Every `as` is a potential runtime crash. Cast only after the type system has verified the claim.
+Prefer inference and narrowing. Use an assertion only when validation or an established invariant supplies evidence the compiler cannot express. `as const` preserves literal information; it does not claim that external data was validated.
 
 ```ts
 // Don't
@@ -221,7 +221,7 @@ When refactoring an `as` out of existing code, identify why TypeScript can't inf
 - Missing discriminant: add one, switch to a discriminated union.
 - Overly wide source type (e.g. `Record<string, unknown>`): narrow it.
 - Untyped boundary: add a parse function or schema.
-- Genuinely inexpressible: use a branded type or `satisfies`.
+- Genuinely inexpressible: keep a narrow assertion with its supporting invariant, or redesign the boundary when that improves the contract. `satisfies` checks an assignable expression; it cannot prove a missing runtime fact.
 
 ## Narrowing hierarchy
 
@@ -231,7 +231,7 @@ From best to last-resort:
 2. **`in` operator.** `"key" in obj` narrows to variants containing that key.
 3. **`typeof` / `instanceof`.** For primitives and class instances.
 4. **User-defined type guard.** When the above aren't enough.
-5. **`as` cast.** Only after validation.
+5. **`as` assertion.** Only with validation or another established invariant the compiler cannot express.
 
 ```ts
 function area(s: Shape): number {
@@ -305,9 +305,9 @@ const config = { theme: "dark", cols: 3 } satisfies Config;
 
 ## Boundary validation
 
-Validate once where data crosses in; trust types inside. See the **boundary-discipline** principle skill.
+Validate once where untrusted data crosses into the domain; trust the established types inside.
 
-- **Wire formats** (proto, JSON-RPC): parse with `ignoreUnknownFields` so forward-compatible changes don't break old clients.
+- **Wire formats** (proto, JSON-RPC): follow the actual protocol's unknown-field and versioning rules; do not impose one parser option on every protocol.
 - **Persisted JSON:** versioned blob with a try/catch around the parse.
 - **Don't re-validate** deep in call chains.
 
@@ -335,6 +335,8 @@ function renderChecks(s: Pick<ChecksMessage, "totalCount" | "checks">) {
 Reach for `Pick`, `Omit`, `Parameters`, `ReturnType`, `Awaited`, `typeof` before writing a new interface.
 
 ## Object args
+
+Use named objects when positional fields would be ambiguous. Preserve clear existing signatures; this is an example, not a requirement to migrate every call.
 
 ```ts
 // Don't. Swap two args, still compiles.

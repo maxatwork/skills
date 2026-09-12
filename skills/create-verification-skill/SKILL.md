@@ -1,6 +1,6 @@
 ---
 name: create-verification-skill
-description: 'Use ONLY when the user explicitly asks to create a verification or control skill for a repo. Generate a project-local verification skill that drives the app the way a user does — any language, framework, or platform.'
+description: "Use ONLY when the user asks to create a repository verification skill. Build and prove a workflow that drives the real app and preserves evidence."
 disable-model-invocation: true
 metadata:
   opencode/autoinvoke: "false"
@@ -20,7 +20,7 @@ Answer these from the codebase and only ask the user what you cannot observe:
 - **Observe:** what evidence can be captured? Screenshots, terminal transcripts, response bodies, logs, exit codes, DB state.
 - **Isolate:** can two instances run side by side (ports, data dirs, profiles)? If not, say so in the generated skill: refusing to double-drive a shared instance beats corrupting the user's session.
 
-If the checkout doesn't build or start as-is, fix that first (or report it precisely) before generating; a skill written against a broken base teaches wrong steps. When an irrelevant missing asset blocks startup (a static dir the API never serves, a sample config), the generated skill may create it, clearly marked as verification scaffolding, and remove it in cleanup.
+If startup fails, diagnose the actual prerequisite. Repair configuration or fixtures within the requested verification work when safe; report unrelated product failures instead of expanding the task into a general repair. Generate the parts supported by evidence and identify any unexecuted path as a draft. A temporary asset or sample configuration needed only for isolated verification must be clearly marked and removed in cleanup.
 
 ## 2. Generate the skill
 
@@ -35,7 +35,7 @@ Write `.agents/skills/verify-<app>/SKILL.md` with YAML frontmatter (`name: verif
 
 ## 3. Seed the feature map
 
-Create `.agents/skills/verify-<app>/features/README.md` plus one file per user-facing feature you can identify (aim for the top 3-5 to start, from routes, commands, menus, or docs). Follow the shape in [`references/feature-map-example/`](references/feature-map-example/), with a README index and one file per feature. Each file answers, from the user's point of view: what the feature is, how to reach it, how to drive it with the harness, and what observable end state proves it works. The four H2s are `Sub-features`, `How to get to it (user POV)`, `Driving it with <harness>`, and `Gotchas`. The map is the repo's maintained verification source; a proof that drives one convenient entry point is incomplete when the map lists others.
+Map the features in the requested scope using the repository's existing verification documentation. For a new map, use `features/README.md` as an index and split feature files where useful. The [feature-map example](references/feature-map-example/) illustrates a shape, not required headings or a feature quota. Record what the feature does, how a user reaches and drives it, and what observable state proves it works. Later verification selects the entries relevant to its claims; one convenient entry point does not prove other paths that were promised.
 
 ## 4. Prove the generated skill before handing it over
 

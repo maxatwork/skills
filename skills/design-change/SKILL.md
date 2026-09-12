@@ -1,6 +1,6 @@
 ---
 name: design-change
-description: Use ONLY when the user explicitly asks for a grounded design-and-implementation pass with competing structural designs. Design and implement a codebase change from caller-first usage and grounded architecture.
+description: "Use ONLY when the user requests a caller-first design and implementation pass comparing two structural alternatives."
 disable-model-invocation: true
 metadata:
   opencode/autoinvoke: "false"
@@ -24,7 +24,7 @@ Keep sketches in the conversation or scratch space. Add a design document or a d
 
 ### 1. Ground the existing architecture
 
-Read the repository instructions, domain docs, architecture decisions, manifests, and the code around the requested change. Trace at least one real call from its caller through the current interface and implementation to persistence or another side effect, then trace the result back. Inspect the relevant tests and nearby precedent.
+Read repository instructions and the domain docs, architecture decisions, manifests, or nearby code that constrain the requested change. Trace at least one real call from its caller through the current interface and implementation to persistence or another side effect, then trace the result back. Inspect the relevant tests and nearby precedent.
 
 Record the evidence that constrains the design:
 

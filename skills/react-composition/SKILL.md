@@ -1,6 +1,6 @@
 ---
 name: react-composition
-description: Design, write, refactor, and review React components and hooks with clear seams between visual composition, application bindings, and data operations. Use for component decomposition, state ownership, or separating UI from queries, mutations, and subscriptions.
+description: "Design or refactor React component and hook boundaries for visual composition, application operations, state ownership, and resource lifecycles."
 ---
 
 # React composition
@@ -35,62 +35,7 @@ Read the current callers and trace data, events, and state ownership. Then sketc
 the visual composition using fixture values before implementing application
 bindings. The sketch is an interface check; a new demo file is optional.
 
-For a conversation, the visual vocabulary should allow this:
-
-```tsx
-<Conversation>
-  <MessagesList>
-    <Message alignment="end" author="You">
-      Can you explain this?
-    </Message>
-    <Message alignment="start" author="Alex">
-      Here is an example.
-    </Message>
-    <Message appearance="plain" author="Assistant">
-      Let's walk through it.
-    </Message>
-  </MessagesList>
-  <Composer
-    value={draft}
-    onValueChange={setDraft}
-    onSubmit={handleSubmit}
-  />
-</Conversation>
-```
-
-The fixture host supplies local state and event handlers. These visual components
-know nothing about sessions, principal identity, message persistence, or agent
-execution. The application decides alignment and author labels before rendering.
-
-The application can use the same vocabulary through functional children:
-
-```tsx
-<Conversation>
-  <ConversationTranscript conversationId={conversationId} />
-  <ConversationComposer conversationId={conversationId} />
-</Conversation>
-```
-
-For example, inside the functional composer:
-
-```tsx
-const composer = useConversationComposer(conversationId)
-
-return (
-  <Composer
-    value={composer.draft}
-    onValueChange={composer.changeDraft}
-    onSubmit={composer.send}
-    pending={composer.pending}
-    disabled={!composer.canSend}
-    error={composer.error}
-  />
-)
-```
-
-The hook encapsulates how sending works. The visual composer translates DOM
-events into value changes and submission intent. Functional components should
-read as composition and binding, without detailed styling or data-access code.
+For a worked visual and application binding example, read [conversation composition](references/conversation.md).
 
 ## Put knowledge behind the interface
 

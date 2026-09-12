@@ -1,57 +1,22 @@
 ---
 name: ponytail-review
-description: >
-  Code review focused exclusively on over-engineering. Finds what to delete:
-  reinvented standard library, unneeded dependencies, speculative abstractions,
-  dead flexibility. One line per finding: location, what to cut, what replaces
-  it. Use when the user says "review for over-engineering", "what can we
-  delete", "is this over-engineered", "simplify review", or invokes
-  /ponytail-review. Complements correctness-focused review, this one only
-  hunts complexity.
+description: "Review a diff for unnecessary abstractions, dependencies, or duplication when the user requests a simplicity review. Preserve behavior and report findings without edits."
 ---
 
-Review diffs for unnecessary complexity. One line per finding: location, what
-to cut, what replaces it. The diff's best outcome is getting shorter.
+# Ponytail review
 
-## Format
+Review the requested diff for unnecessary complexity. Recommend a cut only when the replacement preserves behavior and contracts and reduces maintenance or caller burden. A single caller or implementation is not proof that an abstraction is unnecessary.
 
-`L<line>: <tag> <what>. <replacement>.`, or `<file>:L<line>: ...` for
-multi-file diffs.
+Report each finding with a file and line, what changes, why the responsibility no longer needs that code, and the replacement. Useful tags are `delete`, `stdlib`, `native`, `yagni`, and `shrink`.
 
-Tags:
+Examples of justified findings:
 
-- `delete:` dead code, unused flexibility, speculative feature. Replacement: nothing.
-- `stdlib:` hand-rolled thing the standard library ships. Name the function.
-- `native:` dependency or code doing what the platform already does. Name the feature.
-- `yagni:` abstraction with one implementation, config nobody sets, layer with one caller.
-- `shrink:` same logic, fewer lines. Show the shorter form.
+- An unused internal flag has no callers or dynamic consumers; remove its branch and configuration.
+- A date library is used only for a format that the target platforms' `Intl.DateTimeFormat` supports with the same locale behavior.
+- Two wrappers forward the same arguments without owning validation, lifecycle, compatibility, or other policy; remove the redundant layer.
 
-## Examples
+Treat shorter validation or retry code as equivalent only after checking its actual acceptance and failure behavior. Idempotence alone does not remove the need to retry a transient failure.
 
-❌ "This EmailValidator class might be more complex than necessary, have you
-considered whether all these validation rules are needed at this stage?"
+Keep this review scoped to complexity. Distinguish incidental correctness concerns from the requested findings; do not silently start another audit. Apply no edits unless separately requested. Preserve meaningful checks and established test infrastructure.
 
-✅ `L12-38: stdlib: 27-line validator class. "@" in email, 1 line, real validation is the confirmation mail.`
-
-✅ `L4: native: moment.js imported for one format call. Intl.DateTimeFormat, 0 deps.`
-
-✅ `repo.py:L88: yagni: AbstractRepository with one implementation. Inline it until a second one exists.`
-
-✅ `L52-71: delete: retry wrapper around an idempotent local call. Nothing replaces it.`
-
-✅ `L30-44: shrink: manual loop builds dict. dict(zip(keys, values)), 1 line.`
-
-## Scoring
-
-End with the only metric that matters: `net: -<N> lines possible.`
-
-If there is nothing to cut, say `Lean already. Ship.` and stop.
-
-## Boundaries
-
-Scope: over-engineering and complexity only. Correctness bugs, security holes,
-and performance are explicitly out of scope. Route them to a normal review
-pass, not this one. A single smoke test or `assert`-based
-self-check is the ponytail minimum, not bloat, never flag it for deletion.
-Does not apply the fixes, only lists them.
-"stop ponytail-review" or "normal mode": revert to verbose review style.
+Estimate removals only when useful, and label the estimate. With no findings, say no unnecessary complexity was identified in the reviewed scope. This review does not establish readiness to ship.

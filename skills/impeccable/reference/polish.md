@@ -84,7 +84,7 @@ Do not perfect one corner while leaving the rest below the same quality bar.
 
 ## 5. Verify and finish
 
-Walk the complete path again with mouse, keyboard, and touch where applicable. Check:
+Exercise the changed path through the input methods and states affected by the work. Select relevant checks from the following; a narrow change does not require the full matrix:
 
 - mobile, intermediate, and wide layouts on the web; phone and tablet size classes in both supported orientations on native;
 - loading, empty, error, success, disabled, long-content, and missing-content states;

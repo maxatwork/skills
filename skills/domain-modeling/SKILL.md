@@ -1,6 +1,6 @@
 ---
 name: domain-modeling
-description: Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR.
+description: "Change or clarify domain concepts, terminology, ownership, and lifecycles. Use when developing the model or recording domain decisions, not just reading its glossary."
 ---
 
 # Domain Modeling
@@ -9,7 +9,7 @@ Actively build and sharpen the project's domain model as you design. This is the
 
 ## File structure
 
-Most repos have a single context:
+Follow the repository's existing locations and document responsibilities. When it has no established convention, a single-context layout can be:
 
 ```
 /
@@ -74,7 +74,7 @@ When the user states how something works, check whether the code agrees. If you 
 
 When a term is resolved, update `CONTEXT.md` right there. Don't batch these up — capture them as they happen. Use the format in [CONTEXT-FORMAT.md](./CONTEXT-FORMAT.md).
 
-`CONTEXT.md` should be totally devoid of implementation details. Do not treat `CONTEXT.md` as a spec, a scratch pad, or a repository for implementation decisions. It is a glossary and nothing else.
+For a new glossary, keep domain definitions separate from implementation plans and scratch notes. If an existing `CONTEXT.md` has broader documented responsibilities, preserve them and update only the relevant domain material.
 
 ### Offer ADRs sparingly
 
