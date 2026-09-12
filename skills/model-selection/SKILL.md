@@ -7,18 +7,24 @@ description: Choose a model and reasoning effort from the active harness's capab
 
 Use the active harness's model catalog every time the task requires a model or effort choice. The table below is a Codex reference; use it in another harness only when that harness exposes the same model IDs and effort levels. Never invent an identifier. A score of 10 is best in every column. Keep each model and effort pair together.
 
-## Codex reference scorecard
+## Reference scorecard
 
-| Model         | Effort | Intelligence | Cost | Tokens | Steps | Taste |
-| ------------- | ------ | -----------: | ---: | -----: | ----: | ----: |
-| GPT-5.6-sol   | xhigh  |           10 |    7 |      8 |     9 |     6 |
-| GPT-5.6-sol   | high   |            8 |    8 |      9 |    10 |     6 |
-| GPT-5.6-terra | max    |            7 |    7 |      5 |     4 |     3 |
-| GPT-5.6-terra | xhigh  |            4 |    9 |      8 |     9 |     3 |
-| GPT-5.6-terra | high   |            1 |    9 |     10 |    10 |     3 |
-| GPT-5.6-luna  | max    |            7 |   10 |      5 |     1 |     3 |
-| Opus-5        | xhigh  |            9 |    3 |      3 |     3 |     8 |
-| Opus-5        | high   |            8 |    6 |      6 |     5 |     7 |
+| Model          | Effort | Intelligence | Cost | Tokens | Steps | Taste |
+| -------------- | ------ | -----------: | ---: | -----: | ----: | ----: |
+| GPT Astra      | max    |            9 |    4 |      6 |     9 |     9 |
+| GPT Astra      | xhigh  |           10 |    6 |      8 |     9 |     9 |
+| GPT Astra      | high   |            9 |    6 |      8 |     9 |     9 |
+| GPT Astra      | medium |            9 |    7 |      9 |     9 |     9 |
+| GPT Astra      | low    |            4 |    9 |     10 |    10 |     9 |
+| GPT Sol        | xhigh  |            8 |    8 |      7 |     7 |     8 |
+| GPT Sol        | high   |            6 |    8 |      8 |     8 |     8 |
+| GPT Luna       | max    |            4 |   10 |      5 |     1 |     3 |
+| Claude Fable 5 | max    |            7 |    1 |      1 |     3 |    10 |
+| Claude Fable 5 | xhigh  |            7 |    3 |      4 |     5 |    10 |
+| Claude Fable 5 | high   |            6 |    5 |      6 |     6 |    10 |
+| Claude Opus 5  | max    |           10 |    4 |      1 |     2 |     9 |
+| Claude Opus 5  | xhigh  |            9 |    5 |      3 |     3 |     9 |
+| Claude Opus 5  | high   |            9 |    6 |      6 |     4 |     9 |
 
 The columns mean:
 
