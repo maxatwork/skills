@@ -39,6 +39,8 @@ Skip stages that would not change the work. An approved design can go straight t
 
 Read applicable repository instructions and the sources that constrain the change. Audit generated configuration against the actual manifests and loader. For a configuration/parser failure, inspect the real runtime and experiment through its launcher; shell syntax may not be its syntax. Inspect only needed environment values and keep credentials out of outputs.
 
+Before changing parser or topology logic after a parsing failure, inspect the raw input with delimiters visible and prefer command-free fields. Do not infer process ownership from formatted output that may collapse wrappers and their descendants.
+
 Check remembered paths and assumptions against the live checkout. Investigate history and lineage when the evidence disagrees, rather than requiring a root-commit audit for every memory lookup.
 
 Prefer existing conventions and reversible experiments for routine choices. Ask when a consequential product decision remains unresolved, the requested action lacks authorization, or progress needs inaccessible evidence. Reuse decisions and authorization already given; complete independent work while waiting.
@@ -50,5 +52,7 @@ Finish when the intended behavior exists, relevant checks pass, and no known blo
 - Exercise named acceptance paths through the same UI, command, or service a user uses. Lower-layer assertions and test-account shortcuts supplement that proof; they do not establish omitted registration, login, or permission-denied paths.
 - For durability claims, cross a cold process boundary through the real launcher and adapter. Reconstructing a service in one process does not establish persisted state after restart.
 - Match coverage to the changed boundary. A passing static check or narrow probe does not establish downstream behavior it never exercised.
+- For concurrency claims, identify independently supervised ownership roots and verify their ancestry. Overlapping timestamps or process IDs from one wrapper and its nested child do not establish independent work.
+- After delegated slices converge, name an integration owner to inspect their shared contracts, consumers, migrations, lock order, and adversarial concurrency before relying on separately green checks.
 
 Continue correction of failures within scope without a new checkpoint for each iteration. When progress requires a user decision or external change, report the remaining work and the specific blocker. Report the result, evidence, and material departures from the agreed design.

@@ -66,6 +66,10 @@ platform scope; treat obsolete grants only as compatibility data.
 
 For immutable history, identify any mutable staging state as well. Ask when it opens and closes, whether it can be cited, what exact state a citation names, and how replay or retry behaves. Never call a record immutable while an unnamed buffer can still change what its identifier denotes.
 
+For recovery, distinguish the system's actual state, the evidence currently observed, and the transitions that evidence permits. Missing shutdown evidence is not confirmed termination; uncertain exclusive ownership remains unsafe until fencing or reconciliation proves otherwise.
+
+For deferred work, separate facts pinned at acceptance from mutable authorization, configuration, and resource ownership. Name which facts must be revalidated when the work becomes eligible or starts; an earlier authorization decision is not ongoing permission.
+
 ### Cross-reference with code
 
 When the user states how something works, check whether the code agrees. If you find a contradiction, surface it: "Your code cancels entire Orders, but you just said partial cancellation is possible — which is right?"
