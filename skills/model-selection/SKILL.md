@@ -9,22 +9,36 @@ Use the scorecard below as the primary basis for open model and reasoning-effort
 
 ## Scorecard
 
-| Model          | Effort | Intelligence | Cost | Tokens | Steps | Taste |
-| -------------- | ------ | -----------: | ---: | -----: | ----: | ----: |
-| GPT Astra      | max    |            9 |    4 |      6 |     9 |     9 |
-| GPT Astra      | xhigh  |           10 |    6 |      8 |     9 |     9 |
-| GPT Astra      | high   |            9 |    6 |      8 |     9 |     9 |
-| GPT Astra      | medium |            9 |    7 |      9 |     9 |     9 |
-| GPT Astra      | low    |            4 |    9 |     10 |    10 |     9 |
-| GPT Sol        | xhigh  |            8 |    8 |      7 |     7 |     8 |
-| GPT Sol        | high   |            6 |    8 |      8 |     8 |     8 |
-| GPT Luna       | max    |            4 |   10 |      5 |     1 |     3 |
-| Claude Fable 5 | max    |            7 |    1 |      1 |     3 |    10 |
-| Claude Fable 5 | xhigh  |            7 |    3 |      4 |     5 |    10 |
-| Claude Fable 5 | high   |            6 |    5 |      6 |     6 |    10 |
-| Claude Opus 5  | max    |           10 |    4 |      1 |     2 |     9 |
-| Claude Opus 5  | xhigh  |            9 |    5 |      3 |     3 |     9 |
-| Claude Opus 5  | high   |            9 |    6 |      6 |     4 |     9 |
+| Model            | Effort | Intelligence | Cost | Tokens | Steps | Taste |
+| ---------------- | ------ | -----------: | ---: | -----: | ----: | ----: |
+| GPT-6 Astra      | max    |            9 |    4 |      6 |     9 |     8 |
+| GPT-6 Astra      | xhigh  |           10 |    6 |      8 |     9 |     8 |
+| GPT-6 Astra      | high   |            9 |    6 |      8 |     9 |     8 |
+| GPT-6 Astra      | medium |            9 |    7 |      9 |     9 |     8 |
+| GPT-6 Astra      | low    |            7 |    9 |     10 |    10 |     8 |
+| GPT-6 Sol        | max    |            8 |    8 |      6 |     7 |     7 |
+| GPT-6 Sol        | xhigh  |            8 |    9 |      7 |     7 |     7 |
+| GPT-6 Sol        | high   |            7 |    9 |      8 |     8 |     7 |
+| GPT-6 Sol        | medium |            6 |   10 |      9 |     9 |     7 |
+| GPT-6 Luna       | max    |            6 |   10 |      4 |     2 |     3 |
+| GPT-6 Luna       | xhigh  |            5 |   10 |      6 |     3 |     3 |
+| GPT-6 Luna       | high   |            4 |   10 |      7 |     5 |     3 |
+| GPT-5.6 Sol      | max    |            8 |    6 |      5 |     6 |     7 |
+| GPT-5.6 Sol      | xhigh  |            8 |    7 |      7 |     7 |     7 |
+| GPT-5.6 Sol      | high   |            7 |    7 |      8 |     8 |     7 |
+| GPT-5.6 Sol      | medium |            6 |    8 |      9 |     9 |     7 |
+| GPT-5.6 Luna     | max    |            6 |    9 |      5 |     1 |     3 |
+| GPT-5.6 Luna     | xhigh  |            5 |    8 |      7 |     3 |     3 |
+| Claude Fable 5   | max    |            8 |    1 |      1 |     3 |    10 |
+| Claude Fable 5   | xhigh  |            8 |    2 |      4 |     5 |    10 |
+| Claude Fable 5   | high   |            7 |    3 |      6 |     6 |    10 |
+| Claude Fable 5.1 | max    |            9 |    2 |      1 |     4 |    10 |
+| Claude Fable 5.1 | xhigh  |            9 |    3 |      3 |     5 |    10 |
+| Claude Fable 5.1 | high   |            8 |    5 |      5 |     6 |    10 |
+| Claude Opus 5.5  | max    |           10 |    4 |      1 |     6 |     9 |
+| Claude Opus 5.5  | xhigh  |           10 |    6 |      3 |     7 |     9 |
+| Claude Opus 5.5  | high   |            9 |    7 |      5 |     8 |     9 |
+| Claude Opus 5.5  | medium |            9 |    8 |      7 |     8 |     9 |
 
 The columns mean:
 
