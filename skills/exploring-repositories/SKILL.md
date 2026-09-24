@@ -23,12 +23,12 @@ node scripts/explore-repo.mjs "<clone-url-or-github-url-or-project-name>"
 ```
 
 3. If the helper reports `action: fetched-only`, use the path but do not force-reset, stash, clean, checkout, or overwrite local work unless the user explicitly asks.
-4. Copy the exact `path:` line from the helper output into follow-up commands; do not assume the default path when `XDG_DATA_HOME` may be set.
-5. Continue the user's actual repository inspection from the reported `path`.
-6. In the response, include:
-   - `Local repo: /absolute/path`
-   - `Clone URL: ...`
-   - refresh state: cloned, refreshed, or fetched-only with the reason
+4. If local Git tooling prevents cloning, continue from accessible upstream primary source at a pinned revision and disclose that no durable clone was obtained.
+5. When a clone exists, copy the exact `path:` line from the helper output into follow-up commands; do not assume the default path when `XDG_DATA_HOME` may be set.
+6. Continue the user's repository inspection from the reported path or pinned upstream source.
+7. In the response, include:
+   - for a clone: `Local repo: /absolute/path`, `Clone URL: ...`, and refresh state (cloned, refreshed, or fetched-only with the reason)
+   - without a clone: the upstream source URL, pinned revision, and local tooling blocker
 
 ## Quick Reference
 

@@ -308,6 +308,7 @@ const config = { theme: "dark", cols: 3 } satisfies Config;
 Validate once where untrusted data crosses into the domain; trust the established types inside.
 
 - **Wire formats** (proto, JSON-RPC): follow the actual protocol's unknown-field and versioning rules; do not impose one parser option on every protocol.
+- **Outgoing requests:** derive input types from the operation contract. A typed object before serialization is not necessarily the wire payload: JSON may omit `undefined` properties or transform values. If outgoing payload validation is needed, validate the serialized representation against the wire contract.
 - **Persisted JSON:** versioned blob with a try/catch around the parse.
 - **Don't re-validate** deep in call chains.
 

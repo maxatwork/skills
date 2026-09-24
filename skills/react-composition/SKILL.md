@@ -63,6 +63,9 @@ For a worked visual and application binding example, read [conversation composit
 - Bind application outcomes to UI reactions in the functional layer. If a
   successful send should scroll the transcript, expose a clear send outcome and
   connect it to the UI's scrolling capability. Keep scrolling out of persistence.
+- Apply delayed clear, focus, selection, and scroll reactions only while their
+  initiating interaction still owns that UI state. Newer typing or explicit
+  caret placement supersedes pending reactions to an earlier operation.
 - Give operations explicit success and failure behavior. A handled failure must
   not look like success to callers deciding whether to clear a draft or close a
   dialog. Preserve user input on failure.

@@ -70,9 +70,11 @@ marked. Reviewers return findings in the subagent response body.
 Use one synthesis worker with the model/effort pair selected with
 model-selection for synthesis. If the runtime has no worker, synthesize inline.
 Spot-verify citations with the lookup tools available in the current
-environment. Use `references/synthesizer.md` verbatim, with each reviewer's
-full output inlined where marked. The synthesizer returns a structured Accepted
-/ Rejected / Backlog list.
+environment. Before accepting a summary's claim that work was unfinished or
+failed, inspect the original request, its completion turn, and relevant later
+corrections in the source conversation. Use `references/synthesizer.md`
+verbatim, with each reviewer's full output inlined where marked. The
+synthesizer returns a structured Accepted / Rejected / Backlog list.
 
 ### 4. Structural enforcement check
 

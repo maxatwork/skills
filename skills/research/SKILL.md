@@ -5,7 +5,7 @@ description: "Investigate a question using primary sources. Use for a requested 
 
 # Research
 
-Investigate the requested question using primary sources: official documentation, source code, specifications, or first-party data. Follow material claims to the source that owns them and distinguish findings from inference.
+Investigate the requested question using primary sources: official documentation, source code, specifications, or first-party data. Follow material claims to the source that owns them and distinguish findings from inference. For library comparisons tied to a target runtime, inspect official implementations and their runtime dependencies; distinguish documented support, source-based inference, and executed proof.
 
 Use a worker when independent research benefits from delegation and the runtime permits it. Otherwise research inline; a worker is not a prerequisite.
 
