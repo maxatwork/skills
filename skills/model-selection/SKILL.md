@@ -23,15 +23,6 @@ Use the scorecard below as the primary basis for open model and reasoning-effort
 | GPT-6 Luna       | max    |            6 |   10 |      4 |     2 |     3 |
 | GPT-6 Luna       | xhigh  |            5 |   10 |      6 |     3 |     3 |
 | GPT-6 Luna       | high   |            4 |   10 |      7 |     5 |     3 |
-| GPT-5.6 Sol      | max    |            8 |    6 |      5 |     6 |     7 |
-| GPT-5.6 Sol      | xhigh  |            8 |    7 |      7 |     7 |     7 |
-| GPT-5.6 Sol      | high   |            7 |    7 |      8 |     8 |     7 |
-| GPT-5.6 Sol      | medium |            6 |    8 |      9 |     9 |     7 |
-| GPT-5.6 Luna     | max    |            6 |    9 |      5 |     1 |     3 |
-| GPT-5.6 Luna     | xhigh  |            5 |    8 |      7 |     3 |     3 |
-| Claude Fable 5   | max    |            8 |    1 |      1 |     3 |    10 |
-| Claude Fable 5   | xhigh  |            8 |    2 |      4 |     5 |    10 |
-| Claude Fable 5   | high   |            7 |    3 |      6 |     6 |    10 |
 | Claude Fable 5.1 | max    |            9 |    2 |      1 |     4 |    10 |
 | Claude Fable 5.1 | xhigh  |            9 |    3 |      3 |     5 |    10 |
 | Claude Fable 5.1 | high   |            8 |    5 |      5 |     6 |    10 |
