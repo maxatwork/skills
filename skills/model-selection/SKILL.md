@@ -33,11 +33,11 @@ Use the scorecard below as the primary basis for open model and reasoning-effort
 
 The columns mean:
 
-- Intelligence: ability to solve complex tasks.
-- Cost: cost-effectiveness.
-- Tokens: restraint in token use.
-- Steps: speed in reaching a solution.
-- Taste: quality on creative work.
+- Intelligence: ability to solve complex tasks, 10 is smartest.
+- Cost: cost-effectiveness, 10 is most cost-effective.
+- Tokens: restraint in token use, 10 is most token-constrained.
+- Steps: speed in reaching a solution, 10 is fastest.
+- Taste: quality on creative work, 10 is best.
 
 ## Make the choice
 
