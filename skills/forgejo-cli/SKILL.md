@@ -1,6 +1,6 @@
 ---
 name: forgejo-cli
-description: Use fj for Forgejo repository hosting tasks, including pull requests, issues, releases, and Actions.
+description: Use when need to work with Forgejo repository tasks, including pull requests, issues, releases, and Actions.
 ---
 
 # Forgejo CLI
