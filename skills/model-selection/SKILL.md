@@ -1,6 +1,6 @@
 ---
 name: model-selection
-description: "Choose the cheapest sufficient model from the DeepSWE and personal-experience scorecard. Use for model recommendations, delegated work, evaluators, or model routing."
+description: "Choose the cheapest sufficient model from the DeepSWE and personal-experience scorecard. Use for model recommendations, delegated work, evaluators, or model routing, including a dispatch whose model a handoff or plan already names."
 ---
 
 # Model selection
@@ -45,7 +45,9 @@ The columns mean:
 
 ## Make the choice
 
-Respect a model or effort fixed by the user or higher-level instructions. Keep inherited settings when no selection is needed.
+Respect a model or effort fixed in the user's own words or in system or AGENTS.md instructions. Keep inherited settings when no selection is needed. A user correcting a model identifier fixes the identifier, not the model for later work.
+
+A model or effort written into a handoff, plan, ticket, or status note by an agent is not fixed. Choose again for each dispatch, and keep only the note's constraints, such as identifier pitfalls and provider outages. When you write such a note, record those constraints with a timestamp instead of a model or effort.
 
 For an open choice, set the minimum the task needs, then take the cheapest supported row that meets it. Do not maximize intelligence or taste. Do not prefer a higher cost. A higher score is not a requirement. Tokens and Steps are not columns. If two qualifying rows cost the same, prefer higher Intelligence.
 
@@ -61,7 +63,7 @@ For an open choice, set the minimum the task needs, then take the cheapest suppo
    - A short turn that must follow a skill: Luna max, not the GPT-5-mini row.
    - An auth or availability probe: Luna low.
 
-3. If that row's provider cannot run, repeat the same minimum on the providers that can run now. Do not wait, do not inherit the session model, and do not raise the floor or the effort because a provider is down. A down provider is not a reason to move implementation onto Opus or Astra.
+3. If that row's provider cannot run, take the cheapest row that meets the same minimum on the providers that can run now, even if that row is Opus or Astra. Do not wait, do not inherit the session model, and do not raise the floor or the effort because a provider is down. An outage recorded in a handoff or an earlier turn may have ended, so check the provider again before skipping it.
 
 4. State the model, effort, the floor, the cost, and any availability constraint. If nothing meets a real floor, say so. Do not change the floor to justify a preferred model.
 
