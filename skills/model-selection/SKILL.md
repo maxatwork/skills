@@ -23,8 +23,12 @@ Use the scorecard below as the primary basis for open model and reasoning-effort
 | GPT-6 Astra      | medium |            6 |   1.54 |     8 |                         |
 | GPT-6 Sol        | max    |            6 |   1.06 |     7 |                         |
 | Claude Fable 5.1 | medium |            5 |   2.37 |    10 |                         |
+| Grok 4.7         | xhigh  |            5 |   3.74 |     6 |                         |
+| Grok 4.7         | high   |            5 |   2.73 |     6 |                         |
 | GPT-6 Astra      | low    |            5 |   0.82 |     8 |                         |
 | GPT-6 Sol        | high   |            4 |   0.37 |     7 |                         |
+| Gemini 3.8 Flash | high   |            4 |   1.24 |     4 |                         |
+| Gemini 3.8 Flash | medium |            3 |   0.93 |     4 |                         |
 | GPT-6 Luna       | max    |            3 |   0.07 |     4 |                         |
 | GPT-6 Luna       | xhigh  |            2 |   0.07 |     4 |                         |
 | GPT-6 Luna       | high   |            1 |   0.03 |     4 |                         |
@@ -33,7 +37,7 @@ Use the scorecard below as the primary basis for open model and reasoning-effort
 
 The columns mean:
 
-- Intelligence: ability to solve complex tasks, 10 is smartest. 0 doesn't mean useless, e.g. Luna (max) with score 3 is very capable on code writing tasks, but maybe not the best at verification of work where judgement needed.
+- Intelligence: ability to solve complex tasks, 10 is smartest. 0 doesn't mean useless, e.g. GPT-6 Luna (max) with score 3 is extremely capable on code writing tasks, but maybe not the best at verification of work where judgement needed.
 - Cost: avg. cost per task in USD, lower is more cost-effective.
 - Taste: quality on creative work, 10 is best.
 
