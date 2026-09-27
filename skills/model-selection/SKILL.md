@@ -5,38 +5,36 @@ description: "Choose a model and reasoning effort using the DeepSWE and personal
 
 # Model selection
 
-Use the scorecard below as the primary basis for open model and reasoning-effort choices. The ratings are based on DeepSWE and the user's personal experience. Keep each model and effort pair together; a score of 10 is best in every column.
+Use the scorecard below as the primary basis for open model and reasoning-effort choices. The ratings are based on benchmarks and the user's personal experience. Keep each model and effort pair together.
 
-## Scorecard
-
-| Model            | Effort | Intelligence | Cost | Tokens | Steps | Taste |
-| ---------------- | ------ | -----------: | ---: | -----: | ----: | ----: |
-| GPT-6 Astra      | max    |            9 |    4 |      6 |     9 |     8 |
-| GPT-6 Astra      | xhigh  |           10 |    6 |      8 |     9 |     8 |
-| GPT-6 Astra      | high   |            9 |    6 |      8 |     9 |     8 |
-| GPT-6 Astra      | medium |            9 |    7 |      9 |     9 |     8 |
-| GPT-6 Astra      | low    |            7 |    9 |     10 |    10 |     8 |
-| GPT-6 Sol        | max    |            8 |    8 |      6 |     7 |     7 |
-| GPT-6 Sol        | xhigh  |            8 |    9 |      7 |     7 |     7 |
-| GPT-6 Sol        | high   |            7 |    9 |      8 |     8 |     7 |
-| GPT-6 Sol        | medium |            6 |   10 |      9 |     9 |     7 |
-| GPT-6 Luna       | max    |            6 |   10 |      4 |     2 |     3 |
-| GPT-6 Luna       | xhigh  |            5 |   10 |      6 |     3 |     3 |
-| GPT-6 Luna       | high   |            4 |   10 |      7 |     5 |     3 |
-| Claude Fable 5.1 | max    |            9 |    2 |      1 |     4 |    10 |
-| Claude Fable 5.1 | xhigh  |            9 |    3 |      3 |     5 |    10 |
-| Claude Fable 5.1 | high   |            8 |    5 |      5 |     6 |    10 |
-| Claude Opus 5.5  | max    |           10 |    4 |      1 |     6 |     9 |
-| Claude Opus 5.5  | xhigh  |           10 |    6 |      3 |     7 |     9 |
-| Claude Opus 5.5  | high   |            9 |    7 |      5 |     8 |     9 |
-| Claude Opus 5.5  | medium |            9 |    8 |      7 |     8 |     9 |
+| Model            | Effort | Intelligence |   Cost | Taste | Notes                   |
+| ---------------- | ------ | -----------: | -----: | ----: | ----------------------- |
+| Claude Opus 5.5  | max    |           10 |   5.89 |     9 |                         |
+| Claude Opus 5.5  | xhigh  |            9 |   3.46 |     9 |                         |
+| Claude Fable 5.1 | max    |            8 |   7.63 |    10 | Absolute beast in UX/UI |
+| Claude Fable 5.1 | xhigh  |            8 |   5.98 |    10 | Absolute beast in UX/UI |
+| GPT-6 Astra      | max    |            8 |   3.26 |     8 | Absolute beast in 3D    |
+| GPT-6 Astra      | xhigh  |            8 |   2.31 |     8 | Absolute beast in 3D    |
+| Claude Opus 5.5  | high   |            8 |   1.82 |     9 |                         |
+| Claude Fable 5.1 | high   |            7 |   3.91 |    10 |                         |
+| GPT-6 Astra      | high   |            7 |   1.73 |     8 |                         |
+| Claude Opus 5.5  | medium |            7 |   1.34 |     9 |                         |
+| Claude Fable 5.1 | medium |            6 |   2.98 |    10 |                         |
+| GPT-6 Astra      | medium |            6 |   1.54 |     8 |                         |
+| GPT-6 Sol        | max    |            6 |   1.06 |     7 |                         |
+| Claude Fable 5.1 | medium |            5 |   2.37 |    10 |                         |
+| GPT-6 Astra      | low    |            5 |   0.82 |     8 |                         |
+| GPT-6 Sol        | high   |            4 |   0.37 |     7 |                         |
+| GPT-6 Luna       | max    |            3 |   0.07 |     4 |                         |
+| GPT-6 Luna       | xhigh  |            2 |   0.07 |     4 |                         |
+| GPT-6 Luna       | high   |            1 |   0.03 |     4 |                         |
+| GPT-6 Luna       | medium |          0.5 |   0.02 |     4 |                         |
+| GPT-6 Luna       | low    |            0 | 0.0045 |     4 |                         |
 
 The columns mean:
 
-- Intelligence: ability to solve complex tasks, 10 is smartest.
-- Cost: cost-effectiveness, 10 is most cost-effective.
-- Tokens: restraint in token use, 10 is most token-constrained.
-- Steps: speed in reaching a solution, 10 is fastest.
+- Intelligence: ability to solve complex tasks, 10 is smartest. 0 doesn't mean useless, e.g. Luna (max) with score 3 is very capable on coding and debugging tasks, where no deep reasoning around architecture needed.
+- Cost: avg. cost per task in USD, lower is more cost-effective.
 - Taste: quality on creative work, 10 is best.
 
 ## Make the choice
