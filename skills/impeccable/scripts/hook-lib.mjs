@@ -1564,10 +1564,23 @@ export function writeAuditLog(env, entry, cwd = process.cwd()) {
   const baseCwd = entry && typeof entry.cwd === 'string' && entry.cwd ? entry.cwd : cwd;
   // Env wins; otherwise fall back to the unified config's hook.auditLog path.
   let target = env?.IMPECCABLE_HOOK_LOG;
+  let fromRepoConfig = false;
   if (!target || typeof target !== 'string') {
     try { target = readConfig(baseCwd).auditLog; } catch { target = null; }
+    fromRepoConfig = true;
   }
   if (!target || typeof target !== 'string') return false;
+  if (fromRepoConfig) {
+    // The config is committed with the repo, so a cloned project could aim the
+    // log at ~/.zshrc or .git/hooks/pre-commit and have edited file paths
+    // appended to a file that later runs. Only the developer's own env var may
+    // point anywhere; the config path must stay inside the project, outside
+    // .git, and end in .log or .jsonl.
+    if (target.startsWith('~') || path.isAbsolute(target)) return false;
+    const rel = path.relative(baseCwd, path.resolve(baseCwd, target));
+    if (!rel || rel.startsWith('..') || path.isAbsolute(rel)) return false;
+    if (rel.split(path.sep)[0] === '.git' || !/\.(log|jsonl)$/i.test(rel)) return false;
+  }
   try {
     let expanded;
     if (target.startsWith('~/')) {
@@ -1576,6 +1589,16 @@ export function writeAuditLog(env, entry, cwd = process.cwd()) {
       expanded = target;
     } else {
       expanded = path.resolve(baseCwd, target);
+    }
+    if (fromRepoConfig) {
+      // A committed symlink (the file or a parent dir) could still redirect
+      // the append outside the project. Check the nearest existing ancestor
+      // before creating any directories under it.
+      let existing = path.dirname(expanded);
+      while (!fs.existsSync(existing)) existing = path.dirname(existing);
+      const realRel = path.relative(fs.realpathSync(baseCwd), fs.realpathSync(existing));
+      if (realRel.startsWith('..') || path.isAbsolute(realRel) || realRel.split(path.sep)[0] === '.git') return false;
+      try { if (fs.lstatSync(expanded).isSymbolicLink()) return false; } catch { /* not created yet */ }
     }
     fs.mkdirSync(path.dirname(expanded), { recursive: true });
     const line = JSON.stringify({ ts: new Date().toISOString(), ...entry }) + '\n';

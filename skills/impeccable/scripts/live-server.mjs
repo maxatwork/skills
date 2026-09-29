@@ -56,7 +56,9 @@ import {
   applyDeferredSvelteComponentAccepts,
   bumpSvelteComponentPreviewRevision,
   compileCheckVariants,
+  LEGACY_SVELTE_COMPONENT_ROOT,
   removeAllSvelteComponentSessions,
+  SVELTE_COMPONENT_ROOT,
   sweepInactiveSvelteComponentSessions,
 } from './live/svelte-component.mjs';
 import { enterLiveRoot } from './live/roots.mjs';
@@ -943,8 +945,23 @@ function createRequestHandler({ detectScript, liveScriptParts }) {
       // resolved to the root directory itself, which this file route never serves.
       const rel = path.relative(process.cwd(), absPath);
       if (!rel || rel.startsWith('..') || path.isAbsolute(rel)) { res.writeHead(403); res.end('Forbidden'); return; }
+      // The token is readable by every script on the dev page, so never serve
+      // dotfiles or dot-directories (.env, .git, .npmrc) other than the Svelte
+      // preview roots the overlay reads, and resolve symlinks before the
+      // containment check so a link cannot point outside the root.
+      const hasDotPart = (relPath) => {
+        const posix = relPath.split(path.sep).join('/');
+        if ([SVELTE_COMPONENT_ROOT, LEGACY_SVELTE_COMPONENT_ROOT].some((root) => posix.startsWith(`${root}/`))) return false;
+        return posix.split('/').some((part) => part.startsWith('.'));
+      };
+      if (hasDotPart(rel)) { res.writeHead(403); res.end('Forbidden'); return; }
+      let realPath;
+      try { realPath = fs.realpathSync(absPath); }
+      catch { res.writeHead(404); res.end('File not found'); return; }
+      const realRel = path.relative(fs.realpathSync(process.cwd()), realPath);
+      if (!realRel || realRel.startsWith('..') || path.isAbsolute(realRel) || hasDotPart(realRel)) { res.writeHead(403); res.end('Forbidden'); return; }
       let content;
-      try { content = fs.readFileSync(absPath, 'utf-8'); }
+      try { content = fs.readFileSync(realPath, 'utf-8'); }
       catch { res.writeHead(404); res.end('File not found'); return; }
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end(content);

@@ -107,6 +107,7 @@
  *   node serve-question.mjs --payload question.json [--timeout 900] [--idle-grace 600] [--no-open] [--port 0]
  */
 import http from 'node:http';
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
@@ -1030,7 +1031,7 @@ ${buildPath?.toggle ? `<div id="bp-confirm" role="dialog" aria-modal="true" aria
     // is in flight would overwrite the answer being collected.
     document.querySelectorAll('.reroll-btn, #canon').forEach(b => b.setAttribute('disabled', ''));
     try {
-      await fetch('/answer', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ optionId, steer: steer() }) });
+      await fetch('/answer', { method: 'POST', headers: { 'content-type': 'application/json', 'x-impeccable-token': '${PAGE_TOKEN}' }, body: JSON.stringify({ optionId, steer: steer() }) });
     } catch {
       document.body.innerHTML = '<div class="done">The question server went away before this choice could land.<br>Tell the agent your pick in the chat instead.</div>';
       return;
@@ -1304,7 +1305,7 @@ ${buildPath?.toggle ? `<div id="bp-confirm" role="dialog" aria-modal="true" aria
     };
     const apply = (value) => {
       set(value);
-      fetch('/build-path', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ value }) });
+      fetch('/build-path', { method: 'POST', headers: { 'content-type': 'application/json', 'x-impeccable-token': '${PAGE_TOKEN}' }, body: JSON.stringify({ value }) });
       if (value === 'comp') enterComp(); else exitComp();
     };
     // Flipping to comp starts real generation, so it confirms first; the
@@ -1472,7 +1473,7 @@ ${buildPath?.toggle ? `<div id="bp-confirm" role="dialog" aria-modal="true" aria
     // re-roll and renewed the delivery deadline.
     document.querySelectorAll('.reroll-btn, #canon').forEach(b => b.setAttribute('disabled', ''));
     try {
-      await fetch('/answer', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ optionId: 'reroll', steer: steer(), ...(register ? { register } : {}) }) });
+      await fetch('/answer', { method: 'POST', headers: { 'content-type': 'application/json', 'x-impeccable-token': '${PAGE_TOKEN}' }, body: JSON.stringify({ optionId: 'reroll', steer: steer(), ...(register ? { register } : {}) }) });
     } catch {
       document.body.innerHTML = '<div class="done">The question server went away before this choice could land.<br>Tell the agent your pick in the chat instead.</div>';
       return;
@@ -1566,7 +1567,24 @@ ${buildPath?.toggle ? `<div id="bp-confirm" role="dialog" aria-modal="true" aria
 </script>`;
 }
 
+// Binding to 127.0.0.1 does not stop other sites: any page open in the
+// user's browser can POST here, and a DNS-rebound page can read responses.
+// Pin the Host header, and require the per-launch token (a custom header,
+// so cross-origin requests need a preflight this server never grants) on
+// every POST that records a choice. The heartbeat stays open because
+// sendBeacon cannot set headers and a forged beat only keeps the tab alive.
+const PAGE_TOKEN = crypto.randomBytes(24).toString('hex');
+
+function allowedHost(host) {
+  const port = server.address()?.port;
+  return host === `127.0.0.1:${port}` || host === `localhost:${port}`;
+}
+
 const server = http.createServer((req, res) => {
+  if (!allowedHost(req.headers.host)) { res.writeHead(403); res.end(); return; }
+  if (req.method === 'POST' && req.url !== '/heartbeat' && req.headers['x-impeccable-token'] !== PAGE_TOKEN) {
+    res.writeHead(403); res.end(); return;
+  }
   if (req.method === 'GET' && req.url === '/') {
     const pending = nextFile();
     if (pending && fs.existsSync(pending)) {

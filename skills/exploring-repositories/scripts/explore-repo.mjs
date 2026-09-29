@@ -100,6 +100,12 @@ function resolveUrl(target) {
     return null;
   }
 
+  // A token or password in the URL would be printed below and saved in the
+  // clone's .git/config. SSH user names (ssh://git@host/...) are not secrets.
+  if (parsed.password || (parsed.username && parsed.protocol !== "ssh:")) {
+    throw new Error("Remove credentials from the clone URL; use a Git credential helper or SSH key instead.");
+  }
+
   const host = parsed.host.toLowerCase().split("@").at(-1);
   if (host === "github.com") {
     const ownerRepo = githubOwnerRepoFromPath(parsed.pathname);

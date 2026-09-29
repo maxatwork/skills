@@ -13,7 +13,7 @@ Work in Codex's built-in browser (`iab`), in the background by default. Do not o
 
 Use the Penpot dashboard in the built-in browser to find a file by name, open a specified file, or create a new one in the appropriate project. Confirm the file name and page before editing. Do not assume a previously focused file is still the intended target.
 
-The browser profile may retain a Penpot login. If it has expired, use the normal Penpot sign-in flow in the built-in browser and its saved credential/autofill if available. Ask the user to sign in there only if needed. Never reveal, extract, copy into a script, or log the password or browser cookie.
+The browser profile may retain a Penpot login. If it has expired, ask the user to sign in themselves in the built-in browser; do not type, autofill, or submit credentials on their behalf. Never reveal, extract, copy into a script, or log the password or browser cookie.
 
 ## Connect and edit
 

@@ -1007,7 +1007,8 @@ async function fetchLatestSkillVersion() {
     const res = await fetch(`${UPDATE_HOST}/api/version`, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
     if (!res.ok) return null;
     const data = await res.json();
-    return typeof data?.skills === 'string' ? data.skills : null;
+    // This string lands in the agent's context, so accept only a plain version.
+    return typeof data?.skills === 'string' && /^\d+\.\d+\.\d+$/.test(data.skills) ? data.skills : null;
   } catch {
     return null; // offline, sandboxed, timed out, or bad JSON: all non-fatal
   }
@@ -1036,7 +1037,9 @@ function buildUpdateDirective(localVersion, latestVersion) {
  * Best-effort update directive for the boot output. Returns a string to append
  * or null. Polls the version endpoint at most once per day (cached globally in
  * the user's home dir) and re-surfaces a given version at most once per week so
- * the agent never nags. Opt out entirely with IMPECCABLE_NO_UPDATE_CHECK=1.
+ * the agent never nags. Off unless IMPECCABLE_UPDATE_CHECK=1 is set (this copy is
+ * vendored and updated through the skills repo); IMPECCABLE_NO_UPDATE_CHECK=1
+ * and `updateCheck: false` in config still opt out.
  */
 // Read the unified config's top-level `updateCheck` (local overrides shared).
 // Inlined rather than importing hook-lib so the boot path stays lightweight.
@@ -1053,6 +1056,7 @@ function updateCheckDisabledByConfig(cwd = process.cwd()) {
 
 async function computeUpdateDirective(now = Date.now()) {
   try {
+    if (process.env.IMPECCABLE_UPDATE_CHECK !== '1') return null;
     if (process.env.IMPECCABLE_NO_UPDATE_CHECK) return null;
     if (updateCheckDisabledByConfig()) return null;
     const localVersion = readLocalSkillVersion();

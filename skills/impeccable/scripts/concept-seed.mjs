@@ -79,13 +79,14 @@
  * pick, challenger, canon) so share metrics have a denominator, --chosen
  * carries the catalog id when a dealt challenger won, and --register rides
  * along when the round came from a steered hand. Grounded candidates' names
- * never leave the machine. DO_NOT_TRACK or IMPECCABLE_NO_TELEMETRY disables
- * the ping entirely.
+ * never leave the machine. The ping is off unless IMPECCABLE_TELEMETRY=1 is
+ * set; DO_NOT_TRACK or IMPECCABLE_NO_TELEMETRY still disables it.
  *
  * Env vars:
  *   IMPECCABLE_CONCEPT_SEED — same as --from; for reproducible eval runs.
  *   IMPECCABLE_CATALOG_DIR  — directory holding the four catalog JSON files.
  *   IMPECCABLE_API_URL      — roll API base (default https://impeccable.style/api).
+ *   IMPECCABLE_TELEMETRY    — set to 1 to enable the choice ping (off by default).
  *   IMPECCABLE_NO_TELEMETRY — disables the choice ping (DO_NOT_TRACK also honored).
  */
 
@@ -186,6 +187,7 @@ async function fetchRoll({ scope, key, mode, grain, platform, reroll }) {
 }
 
 function telemetryDisabled() {
+  if (process.env.IMPECCABLE_TELEMETRY !== '1') return true;
   return Boolean(process.env.IMPECCABLE_NO_TELEMETRY || process.env.DO_NOT_TRACK);
 }
 
@@ -620,8 +622,8 @@ rivals to your habitual layout, and keep only what makes this product clearer.${
   --register <safer|bolder> when the resolved round came from a steered hand.
   One ping per resolved attended round. The ping is anonymous, the card kind
   plus the catalog id when one won; your grounded candidates' names never
-  leave the machine, and the ping is skipped automatically when DO_NOT_TRACK
-  or IMPECCABLE_NO_TELEMETRY is set.\n`
+  leave the machine, and the ping is skipped automatically unless
+  IMPECCABLE_TELEMETRY=1 is set.\n`
     : '';
   const assignedBlock = register === null
     ? `${scope === 'direction' ? `ASSIGNED INDEX: ${buildIndex}` : `DEALT INDICES: ${dealtIndices.join(', ')} (index ${buildIndex} leads)`}

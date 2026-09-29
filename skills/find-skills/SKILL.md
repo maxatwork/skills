@@ -94,13 +94,13 @@ Learn more: https://skills.sh/vercel-labs/agent-skills/react-best-practices
 
 ### Step 6: Offer to Install
 
-If the user wants to proceed, you can install the skill for them:
+A skill is instructions and scripts your agent will follow, so read its `SKILL.md` and any scripts on GitHub before installing, and tell the user anything that runs commands, touches credentials, or phones home. If the user wants to proceed, you can install the skill for them:
 
 ```bash
-npx skills add <owner/repo@skill> -g -y
+npx skills add <owner/repo@skill> -g
 ```
 
-The `-g` flag installs globally (user-level) and `-y` skips confirmation prompts.
+The `-g` flag installs globally (user-level). Leave out `-y` so the installer's confirmation prompt still shows what is being installed and where.
 
 ## Common Skill Categories
 

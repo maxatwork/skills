@@ -567,7 +567,9 @@ function runCodex(prompt, { cwd, env, resultPath, logPath, timeoutMs = DEFAULT_T
   const args = [
     'exec',
     '--cd', cwd,
-    '--dangerously-bypass-approvals-and-sandbox',
+    // The prompt carries page text and HTML, so treat it as untrusted: writes
+    // stay inside the project and shell commands run without network access.
+    '--sandbox', 'workspace-write',
     '--ephemeral',
     '--output-last-message', resultPath,
     '-c', `model_reasoning_effort="${env.IMPECCABLE_LIVE_COPY_AGENT_EFFORT || 'low'}"`,
@@ -580,9 +582,16 @@ function runCodex(prompt, { cwd, env, resultPath, logPath, timeoutMs = DEFAULT_T
 }
 
 function runClaude(prompt, { cwd, env, resultPath, logPath, timeoutMs = DEFAULT_TIMEOUT_MS }) {
+  // The prompt carries page text and HTML, so treat it as untrusted: file
+  // edits are auto-accepted only inside the project, the only shell commands
+  // allowed are the two checks the prompt asks for, and no MCP servers load.
+  // Anything else needs a permission prompt, which --print denies.
   const args = [
     '--print',
-    '--permission-mode', 'bypassPermissions',
+    '--permission-mode', 'acceptEdits',
+    '--tools', 'Read,Edit,Write,Glob,Grep,Bash',
+    '--allowedTools', 'Bash(node --check *)', 'Bash(npm run impeccable:manual-edit-validate*)',
+    '--strict-mcp-config',
     '--output-format', 'json',
   ];
   if (env.IMPECCABLE_LIVE_COPY_AGENT_MODEL) {
