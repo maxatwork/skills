@@ -7,35 +7,39 @@ description: "Choose the cheapest sufficient model from the DeepSWE and personal
 
 Use the scorecard for an open model and effort choice. Ratings are the user's benchmarks and experience. Keep each model and effort pair together. Rows are ordered by intelligence, not by preference.
 
-| Model            | Effort | Intelligence |   Cost | Taste | Notes                                                    |
-| ---------------- | ------ | -----------: | -----: | ----: | -------------------------------------------------------- |
-| Claude Opus 5.5  | max    |           10 |   5.89 |     9 | Same intelligence as xhigh, higher cost                  |
-| Claude Opus 5.5  | xhigh  |           10 |   3.46 |     9 |                                                          |
-| Claude Fable 5.1 | max    |            9 |   7.63 |    10 |                                                          |
-| Claude Fable 5.1 | xhigh  |            9 |   5.98 |    10 |                                                          |
-| GPT-6 Astra      | max    |            9 |   3.26 |     8 |                                                          |
-| GPT-6 Astra      | xhigh  |            9 |   2.31 |     8 |                                                          |
-| Claude Opus 5.5  | high   |            9 |   1.82 |     9 |                                                          |
-| Claude Fable 5.1 | high   |            8 |   3.91 |    10 |                                                          |
-| GPT-6 Astra      | high   |            8 |   1.73 |     8 |                                                          |
-| Claude Opus 5.5  | medium |            8 |   1.34 |     9 |                                                          |
-| Claude Fable 5.1 | medium |            7 |   2.98 |    10 |                                                          |
-| GPT-6 Astra      | medium |            7 |   1.54 |     8 |                                                          |
-| GPT-6 Sol        | max    |            7 |   1.06 |     7 |                                                          |
-| Grok 4.7         | xhigh  |            6 |   3.74 |     6 |                                                          |
-| Grok 4.7         | high   |            6 |   2.73 |     6 |                                                          |
-| Claude Fable 5.1 | medium |            6 |   2.37 |    10 |                                                          |
-| GPT-6 Astra      | low    |            6 |   0.82 |     8 |                                                          |
-| GPT-6 Sol        | xhigh  |            6 |   0.53 |     7 |                                                          |
-| Gemini 3.8 Flash | high   |            5 |   1.24 |     4 |                                                          |
-| GPT-6 Sol        | high   |            5 |   0.37 |     7 |                                                          |
-| Gemini 3.8 Flash | medium |            4 |   0.93 |     4 |                                                          |
-| GPT-6 Luna       | max    |            4 |   0.07 |     4 |                                                          |
-| GPT-6 Luna       | xhigh  |            3 |   0.07 |     4 |                                                          |
-| GPT-6 Luna       | high   |            2 |   0.03 |     4 |                                                          |
-| GPT-6 Luna       | medium |          1.5 |   0.02 |     4 |                                                          |
-| GPT-6 Luna       | low    |            1 | 0.0045 |     4 |                                                          |
-| GPT-5-mini       | high   |            0 |   0.05 |     1 | Not a candidate. An included or $0 flag is not Cost. Use Luna. |
+| Model             | Effort | Intelligence |   Cost | Taste | Notes                                                          |
+| ----------------- | ------ | -----------: | -----: | ----: | -------------------------------------------------------------- |
+| Claude Sonnet 5.5 | max    |           10 |   7.60 |     7 | Opus 5.5 xhigh is cheaper at the same intelligence             |
+| Claude Opus 5.5   | max    |           10 |   5.89 |     9 | Same intelligence as xhigh, higher cost                        |
+| Claude Opus 5.5   | xhigh  |           10 |   3.46 |     9 |                                                                |
+| Claude Fable 5.1  | max    |            9 |   7.63 |    10 |                                                                |
+| Claude Fable 5.1  | xhigh  |            9 |   5.98 |    10 |                                                                |
+| GPT-6 Astra       | max    |            9 |   3.26 |     8 |                                                                |
+| Claude Sonnet 5.5 | xhigh  |            9 |   2.74 |     7 |                                                                |
+| GPT-6 Astra       | xhigh  |            9 |   2.31 |     8 |                                                                |
+| Claude Opus 5.5   | high   |            9 |   1.82 |     9 |                                                                |
+| Claude Fable 5.1  | high   |            8 |   3.91 |    10 |                                                                |
+| GPT-6 Astra       | high   |            8 |   1.73 |     8 |                                                                |
+| Claude Opus 5.5   | medium |            8 |   1.34 |     9 |                                                                |
+| Claude Fable 5.1  | medium |            7 |   2.98 |    10 |                                                                |
+| GPT-6 Astra       | medium |            7 |   1.54 |     8 |                                                                |
+| GPT-6 Sol         | max    |            7 |   1.06 |     7 |                                                                |
+| Grok 4.7          | xhigh  |            6 |   3.74 |     6 |                                                                |
+| Grok 4.7          | high   |            6 |   2.73 |     6 |                                                                |
+| Claude Fable 5.1  | low    |            6 |   2.37 |    10 |                                                                |
+| Claude Sonnet 5.5 | high   |            6 |   1.08 |     7 |                                                                |
+| GPT-6 Astra       | low    |            6 |   0.82 |     8 |                                                                |
+| GPT-6 Sol         | xhigh  |            6 |   0.53 |     7 |                                                                |
+| Gemini 3.8 Flash  | high   |            5 |   1.24 |     4 |                                                                |
+| Claude Sonnet 5.5 | medium |            5 |   0.59 |     7 |                                                                |
+| GPT-6 Sol         | high   |            5 |   0.37 |     7 |                                                                |
+| Gemini 3.8 Flash  | medium |            4 |   0.93 |     4 |                                                                |
+| GPT-6 Luna        | max    |            4 |   0.07 |     4 |                                                                |
+| GPT-6 Luna        | xhigh  |            3 |   0.07 |     4 |                                                                |
+| GPT-6 Luna        | high   |            2 |   0.03 |     4 |                                                                |
+| GPT-6 Luna        | medium |          1.5 |   0.02 |     4 |                                                                |
+| GPT-6 Luna        | low    |            1 | 0.0045 |     4 |                                                                |
+| GPT-5-mini        | high   |            0 |   0.05 |     1 | Not a candidate. An included or $0 flag is not Cost. Use Luna. |
 
 The columns mean:
 
